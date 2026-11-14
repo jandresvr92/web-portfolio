@@ -18,7 +18,7 @@ export const MOBILE_NODES = [
     index: "02",
     accent: "purple",
     size: 260,
-    asset: "/assets/dioramas/proyectos-v6.png",
+    asset: "/images/dioramas/proyectos-v6.png",
   },
   {
     key: "processing",
@@ -26,7 +26,7 @@ export const MOBILE_NODES = [
     index: "03",
     accent: "orange",
     size: 260,
-    asset: "/assets/dioramas/stack.png",
+    asset: "/images/dioramas/stack.png",
   },
   {
     key: "operations",
@@ -34,7 +34,7 @@ export const MOBILE_NODES = [
     index: "04",
     accent: "lime",
     size: 260,
-    asset: "/assets/dioramas/experiencia-v2.png",
+    asset: "/images/dioramas/experiencia-v2.png",
   },
   {
     key: "hobbies",
@@ -42,6 +42,6 @@ export const MOBILE_NODES = [
     index: "05",
     accent: "amber",
     size: 260,
-    asset: "/assets/dioramas/hobbies.png",
+    asset: "/images/dioramas/hobbies.png",
   },
 ];

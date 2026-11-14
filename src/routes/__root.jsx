@@ -1,7 +1,6 @@
 import { HeadContent, Outlet, Scripts, createRootRoute } from "@tanstack/react-router";
 import { DefaultCatchBoundary } from "@/components/DefaultCatchBoundary";
 import { NotFound } from "@/components/NotFound";
-import { Base44Scripts } from "base44:document";
 import appCss from "@/index.css?url";
 
 export const Route = createRootRoute({
@@ -49,10 +48,8 @@ function RootDocument({ children }) {
       <head>
         <HeadContent />
       </head>
-      {/* data-react-root: the builder's preview bridge looks for #root and falls back to this. */}
-      <body data-react-root="true">
+      <body>
         {children}
-        <Base44Scripts />
         <Scripts />
       </body>
     </html>
