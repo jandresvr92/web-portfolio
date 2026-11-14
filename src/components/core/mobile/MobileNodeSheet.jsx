@@ -8,15 +8,13 @@ import ExperiencePanel from "../experience/ExperiencePanel";
 import HobbiesPanel from "../hobbies/HobbiesPanel";
 import ProjectsPanel from "../projects/ProjectsPanel";
 import TechStackPanel from "../stack/TechStackPanel";
-import TerminalBlock from "./TerminalBlock";
 import NodeDiagram from "./NodeDiagram";
 
 // A node opened on mobile: the diagram takes the top of the screen and the
 // node's own content fills the rest, the two spanning the whole viewport.
 export default function MobileNodeSheet({ node, onClose }) {
-  const { t, dict, lang } = useI18n();
+  const { t, lang } = useI18n();
   const theme = themeFor(node.accent);
-  const cluster = node.profile ? null : dict.clusters[node.key];
 
   return (
     <motion.div
@@ -71,14 +69,7 @@ export default function MobileNodeSheet({ node, onClose }) {
           <TechStackPanel currentLocale={lang} />
         ) : node.nodeId === "hobbies" ? (
           <HobbiesPanel locale={lang} onClose={onClose} />
-        ) : (
-          <>
-            <p className="text-[10px] uppercase tracking-[0.18em] text-zinc-400">{cluster.role}</p>
-            {cluster.blocks.map((block) => (
-              <TerminalBlock key={block.label} block={block} theme={theme} />
-            ))}
-          </>
-        )}
+        ) : null}
       </motion.div>
     </motion.div>
   );

@@ -9,8 +9,6 @@ import ExperiencePanel from "../experience/ExperiencePanel";
 import HobbiesPanel from "../hobbies/HobbiesPanel";
 import ProjectsPanel from "../projects/ProjectsPanel";
 import TechStackPanel from "../stack/TechStackPanel";
-import DetailBlock from "./DetailBlock";
-import DioramaTile from "./DioramaTile";
 import { CORE, LAYOUT_SPRING, layoutIdFor } from "./layout";
 
 // Master-detail view of the opened node: its diorama lands on the left half
@@ -20,7 +18,6 @@ export default function NodeDetailView({ node, onClose }) {
   const theme = themeFor(node.accent);
   const isProfile = node.id === CORE.id;
   const hero = dict.panels.hero;
-  const cluster = isProfile ? null : dict.clusters[node.dossier];
 
   return (
     <motion.div
@@ -34,22 +31,14 @@ export default function NodeDetailView({ node, onClose }) {
           layoutId={layoutIdFor(node.id)}
           transition={LAYOUT_SPRING}
           className="flex items-center justify-center"
-          style={
-            node.asset
-              ? { width: "min(100%, 520px)", aspectRatio: "1536 / 1024" }
-              : { width: node.size, height: node.size, perspective: "1600px" }
-          }
+          style={{ width: "min(100%, 520px)", aspectRatio: "1536 / 1024" }}
         >
-          {node.asset ? (
-            <Image
-              src={node.asset}
-              alt={hero.name}
-              draggable={false}
-              className="h-full w-full select-none object-contain"
-            />
-          ) : (
-            <DioramaTile node={node} />
-          )}
+          <Image
+            src={node.asset}
+            alt={hero.name}
+            draggable={false}
+            className="h-full w-full select-none object-contain"
+          />
         </motion.div>
       </div>
 
@@ -85,16 +74,7 @@ export default function NodeDetailView({ node, onClose }) {
           <TechStackPanel currentLocale={lang} className="mt-6" />
         ) : node.id === "hobbies" ? (
           <HobbiesPanel locale={lang} onClose={onClose} className="mt-6" />
-        ) : (
-          <>
-            <h2 className="mt-5 text-[22px] uppercase leading-tight tracking-[0.08em] text-zinc-100">
-              {cluster.role}
-            </h2>
-            {cluster.blocks.map((block) => (
-              <DetailBlock key={block.label} block={block} theme={theme} />
-            ))}
-          </>
-        )}
+        ) : null}
       </motion.aside>
     </motion.div>
   );

@@ -1,7 +1,6 @@
 import { HeadContent, Outlet, Scripts, createRootRoute } from "@tanstack/react-router";
 import { DefaultCatchBoundary } from "@/components/DefaultCatchBoundary";
 import { NotFound } from "@/components/NotFound";
-import { Toaster } from "@/components/ui/sonner";
 import { Base44Scripts } from "base44:document";
 import appCss from "@/index.css?url";
 
@@ -40,12 +39,7 @@ export const Route = createRootRoute({
 });
 
 function RootComponent() {
-  return (
-    <>
-      <Outlet />
-      <Toaster />
-    </>
-  );
+  return <Outlet />;
 }
 
 // The document. There is no index.html: the server renders <html> from here.
