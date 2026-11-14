@@ -55,7 +55,7 @@ export function I18nProvider({ children }) {
   const value = useMemo(() => {
     const dict = DICTS[lang];
 
-    // t("hud.synced", { synced: 2, total: 3 }) → "modules synced: 2/3"
+    // t("nodes.profile") → "ABOUT ME"; {name} placeholders are filled from `vars`.
     const t = (path, vars) => {
       const raw = resolve(dict, path);
       const text = typeof raw === "string" ? raw : path;

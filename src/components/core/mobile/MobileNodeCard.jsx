@@ -18,7 +18,7 @@ export default function MobileNodeCard({ node, title, role, onOpen }) {
       )}
     >
       <div className="flex h-[164px] items-center justify-center overflow-hidden">
-        <NodeDiagram node={node} scale={node.asset ? 0.42 : 0.46} />
+        <NodeDiagram node={node} />
       </div>
 
       <div className={cn("flex items-center gap-2.5 border-t px-3.5 py-3.5", theme.border)}>

@@ -23,8 +23,7 @@ export const CORE = {
   x: 600,
   y: 600,
   size: 300,
-  asset:
-    "https://base44.app/api/apps/6ae9830dc1af049059b7db6f/files/mp/public/6ae9830dc1af049059b7db6f/a5c661ecc_sobre-mi-v3.png",
+  asset: "/images/dioramas/sobre-mi-v3.png",
   // cut out of its black background and framed like the ring nodes, keeping the
   // centre room a step larger, with its front corner on the last row so the
   // cables converge on its base
@@ -41,7 +40,7 @@ export const NODES = [
     x: 200,
     y: 600,
     size: 260,
-    asset: "/assets/dioramas/proyectos-v6.png",
+    asset: "/images/dioramas/proyectos-v6.png",
     // cut out of its black background and framed like the other rooms, with its
     // front corner on the last row so the purple cable meets its base
     framing: { sourceAspect: 687 / 1024, contentFraction: 0.831, contentWidth: 250, baseDrop: 61 },
@@ -54,7 +53,7 @@ export const NODES = [
     x: 600,
     y: 200,
     size: 260,
-    asset: "/assets/dioramas/stack.png",
+    asset: "/images/dioramas/stack.png",
     // cut out of its black background and framed like the other rooms, with its
     // front corner on the last row so the orange cable meets its base
     framing: { sourceAspect: 687 / 1024, contentFraction: 0.831, contentWidth: 250, baseDrop: 61 },
@@ -67,7 +66,7 @@ export const NODES = [
     x: 600,
     y: 1000,
     size: 260,
-    asset: "/assets/dioramas/experiencia-v2.png",
+    asset: "/images/dioramas/experiencia-v2.png",
     // cut out of its black background and framed like the other rooms, with its
     // front corner on the last row so the lime cable meets its base
     framing: { sourceAspect: 687 / 1024, contentFraction: 0.831, contentWidth: 250, baseDrop: 61 },
@@ -80,7 +79,7 @@ export const NODES = [
     x: 1000,
     y: 600,
     size: 260,
-    asset: "/assets/dioramas/hobbies.png",
+    asset: "/images/dioramas/hobbies.png",
     // cut out of its black background and framed like the projects room, with
     // its front corner on the last row so the amber cable meets its base
     framing: { sourceAspect: 687 / 1024, contentFraction: 0.827, contentWidth: 250, baseDrop: 61 },
