@@ -12,7 +12,7 @@ export default function DossierDownload({ className }) {
       href={CV_PATH}
       download={CV_FILENAME}
       className={[
-        "group relative flex w-full items-center justify-center gap-2 border border-cyan-400/50 bg-cyan-950/10 px-4 py-3 font-mono text-[10px] uppercase tracking-[0.2em] text-cyan-300 transition-all duration-200 hover:border-cyan-300 hover:bg-cyan-950/30 hover:text-white hover:shadow-[0_0_15px_rgba(6,182,212,0.3)] focus-visible:outline focus-visible:outline-1 focus-visible:outline-cyan-400",
+        "group relative flex w-full items-center justify-center gap-2 border border-cyan-400/50 bg-cyan-950/10 px-4 py-3 font-mono text-[10px] sheet:text-[12px] uppercase tracking-[0.2em] text-cyan-300 transition-all duration-200 hover:border-cyan-300 hover:bg-cyan-950/30 hover:text-white hover:shadow-[0_0_15px_rgba(6,182,212,0.3)] focus-visible:outline focus-visible:outline-1 focus-visible:outline-cyan-400",
         className,
       ]
         .filter(Boolean)

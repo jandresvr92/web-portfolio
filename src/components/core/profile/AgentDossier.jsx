@@ -36,13 +36,13 @@ export default function AgentDossier({ className }) {
       <motion.div variants={hud} className="flex flex-wrap items-center gap-x-5 gap-y-5">
         <AvatarHud name={hero.name} />
         <div className="min-w-[130px] flex-1">
-          <p className="font-mono text-[9px] uppercase tracking-[0.26em] text-cyan-400/50">
+          <p className="font-mono text-[9px] sheet:text-[12px] uppercase tracking-[0.26em] text-cyan-400/50">
             {hero.dossier.tag}
           </p>
           <h2 className="mt-1.5 font-mono text-[21px] font-bold uppercase leading-none tracking-[0.12em] text-cyan-300 drop-shadow-[0_0_12px_rgba(34,211,238,0.45)]">
             {t("nodes.profile")}
           </h2>
-          <p className="mt-2 font-mono text-[10px] uppercase tracking-[0.18em] text-zinc-400">
+          <p className="mt-2 font-mono text-[10px] sheet:text-[12px] uppercase tracking-[0.18em] text-zinc-400">
             {hero.role}
           </p>
         </div>

@@ -57,7 +57,7 @@ export default function MobileNodeSheet({ node, onClose }) {
         initial={{ opacity: 0, y: 26 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.05, type: "spring", stiffness: 200, damping: 26 }}
-        className="min-h-0 flex-1 overflow-y-auto px-4 pb-[calc(env(safe-area-inset-bottom)+1.5rem)] pt-5"
+        className="mobile-sheet min-h-0 flex-1 overflow-y-auto px-4 pb-[calc(env(safe-area-inset-bottom)+1.5rem)] pt-5"
       >
         {node.profile ? (
           <AgentDossier />

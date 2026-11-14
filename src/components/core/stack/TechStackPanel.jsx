@@ -16,7 +16,7 @@ export default function TechStackPanel({ currentLocale, className }) {
 
   return (
     <div className={cn("font-mono", className)}>
-      <p className="text-[9px] uppercase tracking-[0.3em] text-orange-500/60">
+      <p className="text-[9px] sheet:text-[12px] uppercase tracking-[0.3em] text-orange-500/60">
         {data.subtitle}
       </p>
       <h2 className="mt-1 text-[22px] uppercase leading-tight tracking-[0.14em] text-orange-300">
@@ -38,7 +38,7 @@ export default function TechStackPanel({ currentLocale, className }) {
               aria-selected={active}
               onClick={() => setActiveTab(tab)}
               className={cn(
-                "-mb-px whitespace-nowrap border-b-2 pb-2 text-[9.5px] uppercase tracking-[0.16em] transition-colors duration-200 focus-visible:outline-none sm:text-[10px]",
+                "-mb-px whitespace-nowrap border-b-2 pb-2 text-[9.5px] uppercase tracking-[0.16em] transition-colors duration-200 focus-visible:outline-none sm:text-[10px] sheet:text-[12px]",
                 active
                   ? "border-orange-500 text-white"
                   : "border-transparent text-gray-500 hover:text-zinc-300"
@@ -65,7 +65,7 @@ export default function TechStackPanel({ currentLocale, className }) {
         </motion.div>
       </AnimatePresence>
 
-      <p className="mt-4 border-t border-gray-800 pt-3 text-[10px] uppercase leading-relaxed tracking-[0.12em] text-orange-400/70">
+      <p className="mt-4 border-t border-gray-800 pt-3 text-[10px] sheet:text-[12px] uppercase leading-relaxed tracking-[0.12em] text-orange-400/70">
         {data.statusLine}
       </p>
     </div>

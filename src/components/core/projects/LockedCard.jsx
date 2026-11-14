@@ -11,10 +11,10 @@ export default function LockedCard({ placeholder, index }) {
       className="flex flex-col items-center justify-center rounded-sm border border-dashed border-gray-800 bg-transparent p-6 text-center"
     >
       <Lock size={16} className="text-purple-400/70" aria-hidden="true" />
-      <p className="mt-2 text-[10px] uppercase leading-relaxed tracking-[0.14em] text-zinc-400">
+      <p className="mt-2 text-[10px] sheet:text-[12px] uppercase leading-relaxed tracking-[0.14em] text-zinc-400">
         {placeholder.label}
       </p>
-      <p className="mt-1 text-[9px] uppercase tracking-[0.2em] text-zinc-500">{placeholder.sub}</p>
+      <p className="mt-1 text-[9px] sheet:text-[12px] uppercase tracking-[0.2em] text-zinc-500">{placeholder.sub}</p>
     </motion.div>
   );
 }

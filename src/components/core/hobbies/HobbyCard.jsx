@@ -32,13 +32,13 @@ export default function HobbyCard({ item, active, onActivate }) {
       <span className="flex flex-col gap-0.5">
         <span
           className={cn(
-            "text-[10px] uppercase leading-tight tracking-[0.12em]",
+            "text-[10px] sheet:text-[12px] uppercase leading-tight tracking-[0.12em]",
             active ? "text-yellow-200" : "text-zinc-300"
           )}
         >
           {item.name}
         </span>
-        <span className="text-[8.5px] uppercase leading-tight tracking-[0.08em] text-zinc-500">
+        <span className="text-[8.5px] sheet:text-[12px] uppercase leading-tight tracking-[0.08em] text-zinc-500">
           {item.buff}
         </span>
       </span>

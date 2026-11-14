@@ -8,7 +8,7 @@ export default function DossierMeta({ className }) {
   return (
     <div
       className={[
-        "shrink-0 border border-cyan-500/20 bg-black/30 px-2.5 py-2 font-mono text-[9px] leading-relaxed",
+        "shrink-0 border border-cyan-500/20 bg-black/30 px-2.5 py-2 font-mono text-[9px] sheet:text-[12px] leading-relaxed",
         className,
       ]
         .filter(Boolean)

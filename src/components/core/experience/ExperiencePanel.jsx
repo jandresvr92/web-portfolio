@@ -12,7 +12,7 @@ export default function ExperiencePanel({ currentLocale, className, mobile = fal
       <p
         className={cn(
           "uppercase text-green-500/60",
-          mobile ? "text-[11px] tracking-[0.24em]" : "text-[9px] tracking-[0.3em]"
+          mobile ? "text-[12px] tracking-[0.24em]" : "text-[9px] tracking-[0.3em]"
         )}
       >
         {data.subtitle}
@@ -48,7 +48,7 @@ export default function ExperiencePanel({ currentLocale, className, mobile = fal
               <h3
                 className={cn(
                   "font-semibold leading-snug tracking-[0.01em] text-zinc-100",
-                  mobile ? "text-[17px]" : "text-[13px]"
+                  mobile ? "text-[18px]" : "text-[13px]"
                 )}
               >
                 {job.role}
@@ -67,7 +67,7 @@ export default function ExperiencePanel({ currentLocale, className, mobile = fal
                     key={achievement}
                     className={cn(
                       "flex gap-2 leading-relaxed text-zinc-400",
-                      mobile ? "text-[14.5px]" : "text-[11.5px]"
+                      mobile ? "text-[16px]" : "text-[11.5px]"
                     )}
                   >
                     <span aria-hidden="true" className="shrink-0 text-green-500">
