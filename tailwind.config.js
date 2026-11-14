@@ -158,5 +158,10 @@ export default {
   		}
   	}
   },
-  plugins: [animate],
+  plugins: [
+    animate,
+    // `sheet:` applies only inside the mobile node sheet (MobileNodeSheet adds
+    // `.mobile-sheet`), so panels shared with desktop can read larger on phones.
+    ({ addVariant }) => addVariant("sheet", ".mobile-sheet &"),
+  ],
 }

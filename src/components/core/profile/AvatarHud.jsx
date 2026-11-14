@@ -54,10 +54,10 @@ export default function AvatarHud({ name }) {
 
       <div className="absolute -bottom-2 left-1/2 flex -translate-x-1/2 items-center gap-1.5 whitespace-nowrap border border-cyan-400/40 bg-zinc-950/90 px-2 py-[3px]">
         <span className="h-1.5 w-1.5 rounded-full bg-green-400 animate-pulse motion-reduce:animate-none" />
-        <span className="font-mono text-[8px] uppercase tracking-[0.16em] text-green-300">
+        <span className="font-mono text-[8px] sheet:text-[12px] uppercase tracking-[0.16em] text-green-300">
           {dossier.status}
         </span>
-        <span className="font-mono text-[8px] uppercase tracking-[0.16em] text-zinc-500">
+        <span className="font-mono text-[8px] sheet:text-[12px] uppercase tracking-[0.16em] text-zinc-500">
           {dossier.badge}
         </span>
       </div>

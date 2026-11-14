@@ -9,7 +9,7 @@ export default function ConsoleBio({ className }) {
   return (
     <div
       className={[
-        "relative overflow-hidden border border-zinc-800/80 bg-black/40 p-4 font-mono text-[12px] leading-relaxed text-zinc-300",
+        "relative overflow-hidden border border-zinc-800/80 bg-black/40 p-4 font-mono text-[12px] sheet:text-[16px] leading-relaxed text-zinc-300",
         className,
       ]
         .filter(Boolean)

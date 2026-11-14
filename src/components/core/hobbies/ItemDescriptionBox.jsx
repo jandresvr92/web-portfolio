@@ -5,7 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 export default function ItemDescriptionBox({ copy, item }) {
   return (
     <div className="mt-4 border border-zinc-800 bg-zinc-950/70 p-4">
-      <p className="text-[9px] uppercase tracking-[0.26em] text-yellow-400/70">
+      <p className="text-[9px] sheet:text-[12px] uppercase tracking-[0.26em] text-yellow-400/70">
         {copy.descriptionLabel}
       </p>
 
@@ -17,19 +17,19 @@ export default function ItemDescriptionBox({ copy, item }) {
           exit={{ opacity: 0, y: -6 }}
           transition={{ duration: 0.18, ease: "easeOut" }}
         >
-          <p className="mt-3 text-[10px] uppercase tracking-[0.16em] text-zinc-500">
+          <p className="mt-3 text-[10px] sheet:text-[12px] uppercase tracking-[0.16em] text-zinc-500">
             {copy.selectedLabel}
           </p>
-          <p className="text-[13px] uppercase tracking-[0.16em] text-yellow-300">{item.name}</p>
+          <p className="text-[13px] sheet:text-[18px] uppercase tracking-[0.16em] text-yellow-300">{item.name}</p>
 
-          <p className="mt-3 text-[10px] uppercase tracking-[0.16em] text-zinc-500">
+          <p className="mt-3 text-[10px] sheet:text-[12px] uppercase tracking-[0.16em] text-zinc-500">
             {copy.buffLabel}
           </p>
-          <p className="text-[11px] uppercase leading-relaxed tracking-[0.12em] text-yellow-200/90">
+          <p className="text-[11px] sheet:text-[12px] uppercase leading-relaxed tracking-[0.12em] text-yellow-200/90">
             {item.buff}
           </p>
 
-          <p className="mt-3 text-[13px] leading-relaxed text-zinc-300">{item.desc}</p>
+          <p className="mt-3 text-[13px] sheet:text-[16px] leading-relaxed text-zinc-300">{item.desc}</p>
         </motion.div>
       </AnimatePresence>
     </div>
