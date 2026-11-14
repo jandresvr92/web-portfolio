@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
-import { Image } from "@/components/ui/image";
 import { BILLBOARD_TRANSFORM, STAGE_PERSPECTIVE, TILT_X } from "./layout";
 
 // The packed artwork keeps a margin around the room it shows, so the box is
@@ -78,7 +77,7 @@ export default function BillboardDiorama({ node, lit, dimmed, glowClass, layoutI
         >
           {/* the shared element: this box is exactly the room's on-screen frame */}
           <motion.div layoutId={layoutId} className="h-full w-full">
-            <Image
+            <img
               src={node.asset}
               alt=""
               width={boxWidth}

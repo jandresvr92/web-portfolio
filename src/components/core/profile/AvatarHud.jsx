@@ -1,4 +1,3 @@
-import { Image } from "@/components/ui/image";
 import { useI18n } from "@/lib/i18n/I18nContext";
 import { AVATAR_PATH } from "../profileAsset";
 
@@ -43,7 +42,7 @@ export default function AvatarHud({ name }) {
       </svg>
 
       <div className="absolute inset-[15px] overflow-hidden rounded-full border border-cyan-400/60 shadow-[0_0_18px_rgba(34,211,238,0.35)]">
-        <Image
+        <img
           src={AVATAR_PATH}
           alt={name}
           width={96}

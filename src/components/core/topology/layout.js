@@ -23,8 +23,7 @@ export const CORE = {
   x: 600,
   y: 600,
   size: 300,
-  asset:
-    "https://base44.app/api/apps/6ae9830dc1af049059b7db6f/files/mp/public/6ae9830dc1af049059b7db6f/a5c661ecc_sobre-mi-v3.png",
+  asset: "/assets/dioramas/sobre-mi-v3.png",
   // cut out of its black background and framed like the ring nodes, keeping the
   // centre room a step larger, with its front corner on the last row so the
   // cables converge on its base

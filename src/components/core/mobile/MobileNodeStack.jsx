@@ -2,7 +2,6 @@ import { useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { useI18n } from "@/lib/i18n/I18nContext";
-import { Image } from "@/components/ui/image";
 import { AVATAR_PATH } from "../profileAsset";
 import LanguageToggle from "../LanguageToggle";
 import MobileNodeCard from "./MobileNodeCard";
@@ -34,7 +33,7 @@ export default function MobileNodeStack({ revealed }) {
       <header className="shrink-0 border-b border-zinc-800 bg-zinc-950 px-4 pb-4 pt-[calc(env(safe-area-inset-top)+1rem)]">
         <div className="flex items-center justify-between gap-3">
           <div className="flex min-w-0 items-center gap-3">
-            <Image
+            <img
               src={AVATAR_PATH}
               alt=""
               width={44}

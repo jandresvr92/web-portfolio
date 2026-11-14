@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { X } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { Image } from "@/components/ui/image";
 import { useI18n } from "@/lib/i18n/I18nContext";
 import { themeFor } from "../nodeTheme";
 import AgentDossier from "../profile/AgentDossier";
@@ -33,7 +32,7 @@ export default function NodeDetailView({ node, onClose }) {
           className="flex items-center justify-center"
           style={{ width: "min(100%, 520px)", aspectRatio: "1536 / 1024" }}
         >
-          <Image
+          <img
             src={node.asset}
             alt={hero.name}
             draggable={false}
