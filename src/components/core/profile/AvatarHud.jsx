@@ -1,12 +1,10 @@
-import { useI18n } from "@/lib/i18n/I18nContext";
 import { AVATAR_PATH } from "../profileAsset";
+import StatusBadge from "./StatusBadge";
 
 // The agent portrait inside a set of slowly counter-rotating HUD rings, with a
-// status badge hanging off the bottom edge.
+// status badge hanging off the bottom edge. On phones the badge is wider than
+// the portrait, so DossierMeta shows it instead.
 export default function AvatarHud({ name }) {
-  const { dict } = useI18n();
-  const dossier = dict.panels.hero.dossier;
-
   return (
     <div className="relative h-[104px] w-[104px] shrink-0">
       <svg
@@ -52,15 +50,7 @@ export default function AvatarHud({ name }) {
         />
       </div>
 
-      <div className="absolute -bottom-2 left-1/2 flex -translate-x-1/2 items-center gap-1.5 whitespace-nowrap border border-cyan-400/40 bg-zinc-950/90 px-2 py-[3px]">
-        <span className="h-1.5 w-1.5 rounded-full bg-green-400 animate-pulse motion-reduce:animate-none" />
-        <span className="font-mono text-[8px] sheet:text-[12px] uppercase tracking-[0.16em] text-green-300">
-          {dossier.status}
-        </span>
-        <span className="font-mono text-[8px] sheet:text-[12px] uppercase tracking-[0.16em] text-zinc-500">
-          {dossier.badge}
-        </span>
-      </div>
+      <StatusBadge className="absolute -bottom-2 left-1/2 -translate-x-1/2 sheet:hidden" />
     </div>
   );
 }
