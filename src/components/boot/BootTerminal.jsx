@@ -4,6 +4,13 @@ import { useI18n } from "@/lib/i18n/I18nContext";
 
 const PAUSE_COST = 10;
 const TICK_MS = 16;
+// After the last character, how long "system online" stays on screen.
+const HOLD_MS = 300;
+// Length of the fade-out (matches duration-500 below, plus a little slack).
+const FADE_MS = 600;
+// Safety cap: fade by now even if throttled timers (slow device, background
+// tab) have not finished typing, so the canvas is never kept behind the boot.
+const MAX_MS = 5000;
 
 export default function BootTerminal({ onComplete }) {
   const { dict } = useI18n();
@@ -16,23 +23,34 @@ export default function BootTerminal({ onComplete }) {
     () => boot.lines.reduce((acc, line) => acc + line.length + PAUSE_COST, 0) + boot.ready.length,
     [boot]
   );
+  const finished = typed >= totalCost;
 
   // Typewriter: one character per tick.
   useEffect(() => {
-    if (typed >= totalCost) return;
+    if (finished) return;
     const timer = setTimeout(() => setTyped((value) => value + 1), TICK_MS);
     return () => clearTimeout(timer);
-  }, [typed, totalCost]);
+  }, [typed, finished]);
 
-  // Hard timeline: fade at 3s, unmount shortly after.
+  // Fade once the last line is typed and has been readable for a moment, so
+  // every language finishes whatever its length or the device's timer speed.
   useEffect(() => {
-    const fade = setTimeout(() => setExiting(true), 3000);
-    const done = setTimeout(() => onComplete?.(), 3600);
-    return () => {
-      clearTimeout(fade);
-      clearTimeout(done);
-    };
-  }, [onComplete]);
+    if (!finished) return;
+    const fade = setTimeout(() => setExiting(true), HOLD_MS);
+    return () => clearTimeout(fade);
+  }, [finished]);
+
+  useEffect(() => {
+    const cap = setTimeout(() => setExiting(true), MAX_MS);
+    return () => clearTimeout(cap);
+  }, []);
+
+  // Unmount when the fade has played.
+  useEffect(() => {
+    if (!exiting) return;
+    const done = setTimeout(() => onComplete?.(), FADE_MS);
+    return () => clearTimeout(done);
+  }, [exiting, onComplete]);
 
   let offset = 0;
   const lines = boot.lines.map((line) => {
@@ -41,7 +59,6 @@ export default function BootTerminal({ onComplete }) {
     return { text: line.slice(0, shown), done: shown === line.length };
   });
   const readyShown = boot.ready.slice(0, Math.min(Math.max(typed - offset, 0), boot.ready.length));
-  const finished = typed >= totalCost;
 
   return (
     <div
