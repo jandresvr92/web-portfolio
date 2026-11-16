@@ -5,7 +5,7 @@ export const PROJECTS = {
     title: "PROYECTOS",
     subtitle: "DEPLOYMENT_CLUSTER",
     sections: { active: "MÓDULOS ACTIVOS", locked: "MÓDULOS EN CONSTRUCCIÓN" },
-    statusLine: "DIAGNÓSTICO: +3 PROYECTOS DESPLEGADOS // DESPLIEGUE EN LÍNEA_",
+    statusLine: "DIAGNÓSTICO: +4 PROYECTOS DESPLEGADOS // DESPLIEGUE EN LÍNEA_",
     active: [
       {
         id: "skilltree",
@@ -34,17 +34,26 @@ export const PROJECTS = {
         status: "STATUS: ACTIVO",
         icon: "box",
       },
+      {
+        id: "bella-sasha-3d",
+        title: "Bella & Sasha 3D",
+        desc: "Habitación interactiva en 3D con navegación espacial, álbum virtual y audio lofi.",
+        tech: ["REACT 19", "THREE.JS", "R3F", "DREI", "VITE"],
+        link: "https://3-d-room-gules.vercel.app/",
+        status: "STATUS: ACTIVO",
+        icon: "box",
+      },
     ],
     placeholders: [
-      { id: "mod-04", label: "[ MÓDULO_04 EN CONSTRUCCIÓN ]", sub: "[ LOCKED_01 ]" },
-      { id: "mod-05", label: "[ MÓDULO_05 EN CONSTRUCCIÓN ]", sub: "[ LOCKED_02 ]" },
+      { id: "mod-05", label: "[ MÓDULO_05 EN CONSTRUCCIÓN ]", sub: "[ LOCKED_01 ]" },
+      { id: "mod-06", label: "[ MÓDULO_06 EN CONSTRUCCIÓN ]", sub: "[ LOCKED_02 ]" },
     ],
   },
   en: {
     title: "PROJECTS",
     subtitle: "DEPLOYMENT_CLUSTER",
     sections: { active: "ACTIVE MODULES", locked: "MODULES UNDER CONSTRUCTION" },
-    statusLine: "DIAGNOSTIC: 3+ PROJECTS DEPLOYED // DEPLOYMENT ONLINE_",
+    statusLine: "DIAGNOSTIC: 4+ PROJECTS DEPLOYED // DEPLOYMENT ONLINE_",
     active: [
       {
         id: "skilltree",
@@ -73,17 +82,26 @@ export const PROJECTS = {
         status: "STATUS: ACTIVE",
         icon: "box",
       },
+      {
+        id: "bella-sasha-3d",
+        title: "Bella & Sasha 3D",
+        desc: "Interactive 3D room with spatial navigation, virtual album, and lofi audio.",
+        tech: ["REACT 19", "THREE.JS", "R3F", "DREI", "VITE"],
+        link: "https://3-d-room-gules.vercel.app/",
+        status: "STATUS: ACTIVE",
+        icon: "box",
+      },
     ],
     placeholders: [
-      { id: "mod-04", label: "[ MODULE_04 UNDER CONSTRUCTION ]", sub: "[ LOCKED_01 ]" },
-      { id: "mod-05", label: "[ MODULE_05 UNDER CONSTRUCTION ]", sub: "[ LOCKED_02 ]" },
+      { id: "mod-05", label: "[ MODULE_05 UNDER CONSTRUCTION ]", sub: "[ LOCKED_01 ]" },
+      { id: "mod-06", label: "[ MODULE_06 UNDER CONSTRUCTION ]", sub: "[ LOCKED_02 ]" },
     ],
   },
   de: {
     title: "PROJEKTE",
     subtitle: "DEPLOYMENT_CLUSTER",
     sections: { active: "AKTIVE MODULE", locked: "MODULE IM BAU" },
-    statusLine: "DIAGNOSE: 3+ PROJEKTE BEREITGESTELLT // DEPLOYMENT ONLINE_",
+    statusLine: "DIAGNOSE: 4+ PROJEKTE BEREITGESTELLT // DEPLOYMENT ONLINE_",
     active: [
       {
         id: "skilltree",
@@ -112,10 +130,19 @@ export const PROJECTS = {
         status: "STATUS: AKTIV",
         icon: "box",
       },
+      {
+        id: "bella-sasha-3d",
+        title: "Bella & Sasha 3D",
+        desc: "Interaktiver 3D-Raum mit räumlicher Navigation, virtuellem Album und Lofi-Audio.",
+        tech: ["REACT 19", "THREE.JS", "R3F", "DREI", "VITE"],
+        link: "https://3-d-room-gules.vercel.app/",
+        status: "STATUS: AKTIV",
+        icon: "box",
+      },
     ],
     placeholders: [
-      { id: "mod-04", label: "[ MODUL_04 IM BAU ]", sub: "[ LOCKED_01 ]" },
-      { id: "mod-05", label: "[ MODUL_05 IM BAU ]", sub: "[ LOCKED_02 ]" },
+      { id: "mod-05", label: "[ MODUL_05 IM BAU ]", sub: "[ LOCKED_01 ]" },
+      { id: "mod-06", label: "[ MODUL_06 IM BAU ]", sub: "[ LOCKED_02 ]" },
     ],
   },
 };
