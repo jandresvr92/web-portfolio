@@ -1,9 +1,14 @@
 import { HeadContent, Outlet, Scripts, createRootRoute } from "@tanstack/react-router";
 import { DefaultCatchBoundary } from "@/components/DefaultCatchBoundary";
 import { NotFound } from "@/components/NotFound";
+import { detectLang } from "@/lib/i18n/detectLang";
+import { LANGUAGES } from "@/lib/i18n/dictionaries";
 import appCss from "@/index.css?url";
 
 export const Route = createRootRoute({
+  // The visitor's language (toggle cookie, else browser), resolved per request
+  // so the server renders the page in it. Pages read it from here.
+  loader: () => ({ lang: detectLang() }),
   // Per-page <title>/meta come from each route's head(); this is the shared base.
   head: () => ({
     meta: [
@@ -43,8 +48,11 @@ function RootComponent() {
 
 // The document. There is no index.html: the server renders <html> from here.
 function RootDocument({ children }) {
+  // The error and not-found shells can render without loader data.
+  const lang = Route.useLoaderData({ select: (data) => data?.lang }) ?? LANGUAGES[0];
+
   return (
-    <html lang="es">
+    <html lang={lang}>
       <head>
         <HeadContent />
       </head>
