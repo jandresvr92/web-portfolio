@@ -21,7 +21,7 @@ export default function StatusMonitor({ className }) {
         className
       )}
     >
-      <p className="text-[9px] uppercase tracking-[0.22em] text-zinc-500">{copy.statusBase}</p>
+      <p className="text-[9px] uppercase tracking-[0.22em] text-zinc-400">{copy.statusBase}</p>
 
       {focusNode ? (
         <>

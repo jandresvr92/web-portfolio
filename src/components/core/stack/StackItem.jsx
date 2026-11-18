@@ -13,7 +13,7 @@ export default function StackItem({ item, shape }) {
         <p className="truncate text-[12.5px] sheet:text-[17px] font-bold leading-snug text-zinc-100">
           {item.name}
         </p>
-        <p className="mt-0.5 text-[10.5px] sheet:text-[16px] leading-snug text-zinc-500">{item.desc}</p>
+        <p className="mt-0.5 text-[10.5px] sheet:text-[16px] leading-snug text-zinc-400">{item.desc}</p>
       </div>
     </li>
   );

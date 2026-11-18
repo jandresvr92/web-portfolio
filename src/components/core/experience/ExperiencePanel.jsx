@@ -11,7 +11,7 @@ export default function ExperiencePanel({ currentLocale, className, mobile = fal
     <div className={cn("font-mono", className)}>
       <p
         className={cn(
-          "uppercase text-green-500/60",
+          "uppercase text-green-400/70",
           mobile ? "text-[12px] tracking-[0.24em]" : "text-[9px] tracking-[0.3em]"
         )}
       >
@@ -59,7 +59,7 @@ export default function ExperiencePanel({ currentLocale, className, mobile = fal
                   mobile ? "text-[12.5px] tracking-[0.1em]" : "text-[10px] tracking-[0.14em]"
                 )}
               >
-                {job.company} <span className="text-zinc-500">// {job.date}</span>
+                {job.company} <span className="text-zinc-400">// {job.date}</span>
               </p>
               <ul className={cn("flex flex-col", mobile ? "mt-3 gap-2" : "mt-2.5 gap-1.5")}>
                 {job.achievements.map((achievement) => (

@@ -19,12 +19,12 @@ export default function ProjectsPanel({ currentLocale, className }) {
         transition={{ duration: 0.24 }}
         className={cn("font-mono", className)}
       >
-        <p className="text-[9px] sheet:text-[12px] uppercase tracking-[0.3em] text-purple-400/60">{data.subtitle}</p>
+        <p className="text-[9px] sheet:text-[12px] uppercase tracking-[0.3em] text-purple-400/80">{data.subtitle}</p>
         <h2 className="mt-1 text-[22px] uppercase leading-tight tracking-[0.14em] text-purple-300 animate-pulse drop-shadow-[0_0_14px_rgba(168,85,247,0.45)]">
           {data.title}
         </h2>
 
-        <p className="mt-6 text-[9px] sheet:text-[12px] uppercase tracking-[0.24em] text-zinc-500">
+        <p className="mt-6 text-[9px] sheet:text-[12px] uppercase tracking-[0.24em] text-zinc-400">
           {data.sections.active}
         </p>
         <div className="mt-2.5 grid grid-cols-1 gap-4 sm:grid-cols-2">
@@ -33,7 +33,7 @@ export default function ProjectsPanel({ currentLocale, className }) {
           ))}
         </div>
 
-        <p className="mt-6 text-[9px] sheet:text-[12px] uppercase tracking-[0.24em] text-zinc-500">
+        <p className="mt-6 text-[9px] sheet:text-[12px] uppercase tracking-[0.24em] text-zinc-400">
           {data.sections.locked}
         </p>
         <div className="mt-2.5 grid grid-cols-1 gap-4 sm:grid-cols-2">

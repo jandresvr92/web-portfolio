@@ -17,12 +17,12 @@ export default function ItemDescriptionBox({ copy, item }) {
           exit={{ opacity: 0, y: -6 }}
           transition={{ duration: 0.18, ease: "easeOut" }}
         >
-          <p className="mt-3 text-[10px] sheet:text-[12px] uppercase tracking-[0.16em] text-zinc-500">
+          <p className="mt-3 text-[10px] sheet:text-[12px] uppercase tracking-[0.16em] text-zinc-400">
             {copy.selectedLabel}
           </p>
           <p className="text-[13px] sheet:text-[18px] uppercase tracking-[0.16em] text-yellow-300">{item.name}</p>
 
-          <p className="mt-3 text-[10px] sheet:text-[12px] uppercase tracking-[0.16em] text-zinc-500">
+          <p className="mt-3 text-[10px] sheet:text-[12px] uppercase tracking-[0.16em] text-zinc-400">
             {copy.buffLabel}
           </p>
           <p className="text-[11px] sheet:text-[12px] uppercase leading-relaxed tracking-[0.12em] text-yellow-200/90">

@@ -47,7 +47,7 @@ The site is a dark terminal on an isometric grid. Keep new UI inside that langua
 
 **Palette**
 
-- Background `zinc-950` (`#09090b`); text `zinc-200` (body), `zinc-100` (headings), `zinc-400`/`zinc-500` (secondary); borders `gray-800` / `zinc-800`.
+- Background `zinc-950` (`#09090b`); text `zinc-200` (body), `zinc-100` (headings), `zinc-400` (secondary, the dimmest readable text: 7.8:1 on `zinc-950`); borders `gray-800` / `zinc-800`.
 - Brand accent: neon amber, the `--neon` CSS variable (`text-neon`, `border-neon/40`…), used for the brand and global focus.
 - One accent per node, used for its panel, cards and focus ring, and nowhere else:
 
@@ -83,4 +83,5 @@ The site is a dark terminal on an isometric grid. Keep new UI inside that langua
 
 - Interactive elements are real buttons or links with a visible keyboard focus state (`focus-visible` outline in the node accent, or the same highlight as hover).
 - Decorative images get `alt=""`; meaningful ones get a description.
+- Text meets WCAG AA contrast (4.5:1), however small or secondary: never `zinc-500` or darker for text, and no `opacity-*` that pulls it below. `zinc-500`/`zinc-600` stay for borders, icons (3:1 is enough) and decorative glyphs marked `aria-hidden="true"`.
 - Check the page at 375 px: no horizontal scroll, no truncated titles.

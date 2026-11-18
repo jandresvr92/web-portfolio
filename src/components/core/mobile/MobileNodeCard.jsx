@@ -23,7 +23,7 @@ export default function MobileNodeCard({ node, title, onOpen }) {
 
       <div className={cn("flex items-center gap-2.5 border-t px-3.5 py-3.5", theme.border)}>
         <span className={cn("shrink-0 text-[13px] tabular-nums", theme.text)}>{node.index}</span>
-        <span className="shrink-0 text-[13px] text-zinc-600">//</span>
+        <span aria-hidden="true" className="shrink-0 text-[13px] text-zinc-600">//</span>
         <span className="min-w-0 flex-1 truncate text-[15px] uppercase tracking-[0.1em] text-zinc-100">
           {title}
         </span>
