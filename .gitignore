@@ -27,3 +27,6 @@ src/routeTree.gen.ts
 .idea
 .DS_Store
 *.sw?
+
+# temporary pages written by tools/render.mjs while it renders
+tools/**/.*.filled.html

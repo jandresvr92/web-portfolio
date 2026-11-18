@@ -1,0 +1,205 @@
+<!doctype html>
+<!-- Source of public/cv/CV_Jaime_Andres_Velez_Rojas.pdf. Edit the text here, then run
+     `npm run cv:build`. Values in double braces are filled from src/lib/site.js. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>{{NAME}} — CV</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=block" rel="stylesheet">
+<meta name="author" content="{{NAME}}">
+<style>
+  @page { size: Letter; margin: 0.55in 0.6in; }
+  :root { --ink: #18181b; --muted: #52525b; --accent: #a16207; --rule: #e4e4e7; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Inter", Arial, sans-serif; font-size: 9.6pt; line-height: 1.42; color: var(--ink); }
+  a { color: inherit; text-decoration: none; }
+  header { border-bottom: 2px solid var(--accent); padding-bottom: 8pt; margin-bottom: 10pt; }
+  h1 { font-size: 21pt; font-weight: 600; letter-spacing: 0.01em; }
+  .role { font-size: 11pt; color: var(--accent); font-weight: 600; margin-top: 1pt; }
+  .contact { margin-top: 5pt; color: var(--muted); font-size: 8.8pt; }
+  .contact div + div { margin-top: 1pt; }
+  .contact span { white-space: nowrap; }
+  .contact span + span::before { content: "·"; margin: 0 6pt; color: #a1a1aa; }
+  section { margin-top: 11pt; }
+  h2 { font-size: 9pt; text-transform: uppercase; letter-spacing: 0; color: var(--accent); font-weight: 700; font-size: 9.6pt;
+       border-bottom: 1px solid var(--rule); padding-bottom: 2pt; margin-bottom: 6pt; }
+  p.summary { color: var(--ink); }
+  .skills { display: grid; grid-template-columns: 112pt 1fr; row-gap: 2pt; }
+  .skills dt { font-weight: 600; }
+  .job { margin-bottom: 8pt; break-inside: avoid; }
+  .job-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12pt; }
+  .job-title { font-weight: 600; font-size: 10.2pt; }
+  .job-title .at { font-weight: 400; color: var(--muted); }
+  .date { color: var(--muted); font-size: 8.8pt; white-space: nowrap; }
+  ul { margin: 3pt 0 0 13pt; }
+  li { margin-bottom: 1.5pt; padding-left: 1pt; }
+  li::marker { color: var(--accent); }
+  .projects { display: grid; grid-template-columns: 1fr 1fr; gap: 6pt 16pt; }
+  .project { break-inside: avoid; }
+  .project b { font-weight: 600; }
+  .project .tech { color: var(--muted); font-size: 8.6pt; }
+  .project .url { color: var(--accent); font-size: 8.6pt; }
+  .edu { display: flex; justify-content: space-between; gap: 12pt; margin-bottom: 3pt; }
+  .edu .what { font-weight: 600; }
+  .edu .where { color: var(--muted); font-weight: 400; }
+  .two { display: grid; grid-template-columns: 1.25fr 1fr; gap: 16pt; }
+  .plain { list-style: none; margin-left: 0; }
+  .plain li { margin-bottom: 2pt; }
+  .muted { color: var(--muted); }
+</style>
+</head>
+<body>
+<header>
+  <h1>{{NAME}}</h1>
+  <div class="role">{{ROLE}} · Angular, React &amp; Node.js</div>
+  <div class="contact">
+    <div><span>Medellín, Colombia · Open to remote</span><span>+57 305 354 0475</span><span><a href="mailto:jandres.vr92@gmail.com">jandres.vr92@gmail.com</a></span></div>
+    <div><span><a href="{{LINKEDIN_URL}}">{{LINKEDIN_LABEL}}</a></span><span><a href="{{SITE_URL}}">{{SITE_HOST}}</a></span></div>
+  </div>
+</header>
+
+<section>
+  <h2>Summary</h2>
+  <p class="summary">
+    Full-stack developer with 3+ years of experience and a strong frontend core: dynamic, scalable and user-centered
+    interfaces with Angular and React, including complex data visualizations with Highcharts and AG Grid. On the backend,
+    experience with Node.js, REST APIs and PostgreSQL schema design, and in migrating monolithic architectures to
+    microservices. Writes technical documentation, resolves critical bugs in agile teams and keeps learning; looking to
+    grow as a full-stack engineer in a remote-friendly team.
+  </p>
+</section>
+
+<section>
+  <h2>Skills</h2>
+  <dl class="skills">
+    <dt>Frontend</dt><dd>Angular, React, TypeScript, JavaScript, HTML, CSS, Tailwind CSS</dd>
+    <dt>Backend &amp; data</dt><dd>Node.js, REST APIs, PostgreSQL, microservices, Python (scripting)</dd>
+    <dt>Data visualization</dt><dd>Highcharts, AG Grid</dd>
+    <dt>3D &amp; interactive</dt><dd>Three.js, React Three Fiber, Canvas 2D, Framer Motion</dd>
+    <dt>Testing</dt><dd>BDD, TDD, Selenium</dd>
+    <dt>Tools</dt><dd>Git, Azure DevOps, Jira, Figma, Miro, Vercel</dd>
+  </dl>
+</section>
+
+<section>
+  <h2>Experience</h2>
+
+  <div class="job">
+    <div class="job-head">
+      <div class="job-title">Software Developer <span class="at">· Fuse Tech</span></div>
+      <div class="date">Aug 2025 – Nov 2025</div>
+    </div>
+    <ul>
+      <li>Resolved critical bugs and optimized UI performance.</li>
+      <li>Collaborated on feature development and agile deployments.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-head">
+      <div class="job-title">Frontend Developer <span class="at">· Yuxi Global · Medellín</span></div>
+      <div class="date">Dec 2021 – Jan 2023</div>
+    </div>
+    <ul>
+      <li>Built a dynamic chart bound to a data grid with Angular, Highcharts and AG Grid: both components listen to each
+        other's changes, so users pick the metrics to plot and the column filters update with them.</li>
+      <li>Resolved 90% of the sprint's layout bugs, about one per day, matching the Figma designs.</li>
+      <li>Wrote the team's onboarding documentation (pull request process, commit rules, project architecture,
+        technologies), which made it easier for new members to adapt to the project.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-head">
+      <div class="job-title">Frontend Developer <span class="at">· Talos Digital · Medellín</span></div>
+      <div class="date">Jun 2021 – Dec 2021</div>
+    </div>
+    <ul>
+      <li>Migrated an e-commerce platform to a microservices architecture, removing the dependency on specialists in a
+        single technology.</li>
+      <li>Drove continuous improvement during the migration: investigated errors and identified the critical services
+        to keep the platform stable and the service quality high.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-head">
+      <div class="job-title">Web UI Developer <span class="at">· Globant · Medellín</span></div>
+      <div class="date">Dec 2020 – Mar 2021</div>
+    </div>
+    <ul>
+      <li>Led a five-person test automation learning initiative, from BDD and TDD concepts to automated tests with
+        Selenium, contributing to a sports streaming platform.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-head">
+      <div class="job-title">Full-stack Developer <span class="at">· TALENTA 365 · Medellín</span></div>
+      <div class="date">Jun 2020 – Dec 2020</div>
+    </div>
+    <ul>
+      <li>Developed a candidate pre-screening platform that let the company manage its own hiring, lowered selection
+        costs and made recruiting more efficient.</li>
+      <li>Designed a PostgreSQL schema that reduced the complexity of the queries.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Selected projects</h2>
+  <div class="projects">
+    <div class="project">
+      <b>Isometric portfolio</b> — server-rendered, trilingual (en/es/de) portfolio with an interactive isometric map.
+      <div class="tech">TanStack Start, React 19, Tailwind CSS, Framer Motion, Vercel</div>
+      <div class="url">{{SITE_HOST}}</div>
+    </div>
+    <div class="project">
+      <b>SkillTree</b> — interactive graph-based app to visualize and track learning paths.
+      <div class="tech">React, TypeScript, Zustand, React Flow</div>
+      <div class="url">skilltree-sand-two.vercel.app</div>
+    </div>
+    <div class="project">
+      <b>DevOps 3D Roadmap</b> — interactive isometric diorama with achievement nodes.
+      <div class="tech">Three.js, React Three Fiber, Drei, Vite</div>
+      <div class="url">nicos-roadmap.vercel.app</div>
+    </div>
+    <div class="project">
+      <b>Bella &amp; Sasha 3D</b> — 3D room with spatial navigation, a virtual album and lofi audio.
+      <div class="tech">React 19, Three.js, React Three Fiber, Drei</div>
+      <div class="url">3-d-room-gules.vercel.app</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Education</h2>
+  <div class="edu"><div><span class="what">Backend Development</span> <span class="where">· Universidad EAFIT</span></div><div class="date">May 2024 – Dec 2024</div></div>
+  <div class="edu"><div><span class="what">Frontend Development</span> <span class="where">· Universidad EAFIT</span></div><div class="date">Aug 2024</div></div>
+  <div class="edu"><div><span class="what">AI for Everyone (IA para todos)</span> <span class="where">· Universidad EAFIT</span></div><div class="date">Apr 2025</div></div>
+  <div class="edu"><div><span class="what">Technologist in Analysis and Development of Information Systems</span> <span class="where">· SENA</span></div><div class="date">2014 – 2017</div></div>
+  <div class="edu"><div><span class="what">Environmental Technology</span> <span class="where">· Universidad de Antioquia</span></div><div class="date">2011 – 2014</div></div>
+</section>
+
+<section class="two">
+  <div>
+    <h2>Certifications</h2>
+    <ul class="plain">
+      <li>EF SET English Certificate — 60/100 (B2 Upper Intermediate)</li>
+      <li>Speexx English — CEFR Level B2.2</li>
+      <li>Introduction to Python</li>
+      <li>Introduction to Web Development I</li>
+      <li>CSS Animations Course</li>
+    </ul>
+  </div>
+  <div>
+    <h2>Languages</h2>
+    <ul class="plain">
+      <li><b>Spanish</b> <span class="muted">— Native</span></li>
+      <li><b>English</b> <span class="muted">— Professional working (B2)</span></li>
+      <li><b>German</b> <span class="muted">— Elementary</span></li>
+    </ul>
+  </div>
+</section>
+</body>
+</html>
