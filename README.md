@@ -18,6 +18,7 @@
 ![Nitro](https://img.shields.io/badge/server-Nitro_3-18181B)
 ![i18n](https://img.shields.io/badge/i18n-EN_·_ES_·_DE-ffa600)
 [![Last commit](https://img.shields.io/github/last-commit/jandresvr92/web-portfolio?color=ffa600)](https://github.com/jandresvr92/web-portfolio/commits/main)
+[![CI](https://github.com/jandresvr92/web-portfolio/actions/workflows/ci.yml/badge.svg)](https://github.com/jandresvr92/web-portfolio/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-ffa600)](LICENSE)
 
 <a href="https://jandres-vr.vercel.app">
@@ -153,6 +154,8 @@ Every node follows the same pattern: structure once in `*Data.js`, text per lang
 │   │   └── TopologyContext.jsx
 │   └── index.css
 ├── tests/content.test.js       # content validation (Vitest)
+├── tools/                      # sources and build script for the CV PDF and the share image
+├── .github/workflows/ci.yml    # lint + tests + build on every pull request
 ├── AGENTS.md                   # rules for anyone, human or AI, changing the code
 └── vite.config.js · vitest.config.js · tailwind.config.js · eslint.config.js
 ```
@@ -204,6 +207,8 @@ npm run dev        # http://localhost:5173
 | `npm run lint` / `npm run lint:fix` | ESLint |
 | `npm test` | Content tests (Vitest) |
 | `npm run check` | Lint + tests + build: run it before every pull request |
+| `npm run cv:build` | Regenerates the CV PDF from `tools/cv/cv.html` |
+| `npm run og:build` | Regenerates the 1200×630 share image from `tools/og/og.html` |
 
 ## Quality gates
 
@@ -218,7 +223,7 @@ npm run dev        # http://localhost:5173
    - no rendered text is empty or keeps an unfilled `{placeholder}`.
 3. **A production build.**
 
-Every pull request also gets a Vercel preview deployment to check the result in the browser on desktop and at mobile width.
+[GitHub Actions](.github/workflows/ci.yml) runs the same three steps on every pull request and every push to `main`, so a change that breaks them shows a red check before it can be merged, whoever wrote it. Every pull request also gets a Vercel preview deployment to check the result in the browser on desktop and at mobile width.
 
 ## Deployment
 
@@ -244,7 +249,7 @@ NITRO_PRESET=vercel npm run build   # reproduce the Vercel output locally
 
 ## Conventions
 
-The full rules live in [`AGENTS.md`](AGENTS.md), which coding agents (Claude, Codex, Cursor and others) read before changing the code. The essentials:
+The full rules live in [`AGENTS.md`](AGENTS.md): workflow, code conventions, content rules, how to regenerate the CV and share image, and the design rules (palette, typography, shapes, motion, accessibility). Many coding agents (Codex, Cursor, GitHub Copilot) read it on their own and `CLAUDE.md` points Claude to it; with any other tool, ask it to read `AGENTS.md` first. The essentials:
 
 - JavaScript and JSX only; never edit or commit the generated `src/routeTree.gen.ts`.
 - Import with the `@/` alias (`@/lib/utils` → `src/lib/utils`).
@@ -258,8 +263,8 @@ The full rules live in [`AGENTS.md`](AGENTS.md), which coding agents (Claude, Co
 - [x] Server-side language detection and localized meta tags
 - [x] Share card, canonical URL and favicon set
 - [x] Data/copy split with content tests
-- [ ] GitHub Actions running `npm run check` on every pull request
-- [ ] Written design rules (palette, type scale, motion) and the CV and share-image sources in the repository
+- [x] GitHub Actions running lint, tests and build on every pull request
+- [x] Written design rules (palette, type scale, motion) and the CV and share-image sources in the repository
 - [ ] Optional visual regression tests with Playwright
 - [ ] A full-stack project (Node.js + PostgreSQL API with its own frontend) in the projects node
 
