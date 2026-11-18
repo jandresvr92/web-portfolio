@@ -18,6 +18,7 @@
 ![Nitro](https://img.shields.io/badge/server-Nitro_3-18181B)
 ![i18n](https://img.shields.io/badge/i18n-EN_·_ES_·_DE-ffa600)
 [![Last commit](https://img.shields.io/github/last-commit/jandresvr92/web-portfolio?color=ffa600)](https://github.com/jandresvr92/web-portfolio/commits/main)
+[![License: MIT](https://img.shields.io/badge/license-MIT-ffa600)](LICENSE)
 
 <a href="https://jandres-vr.vercel.app">
   <img src="public/images/og/og-image.jpg" alt="The portfolio: Jaime Vélez Rojas, full-stack developer, beside the isometric rooms of the map" width="820">
@@ -41,6 +42,7 @@
 - [Conventions](#conventions)
 - [Roadmap](#roadmap)
 - [Author](#author)
+- [License](#license)
 
 ## Highlights
 
@@ -267,4 +269,15 @@ The full rules live in [`AGENTS.md`](AGENTS.md), which coding agents (Claude, Co
 
 [Portfolio](https://jandres-vr.vercel.app) · [LinkedIn](https://www.linkedin.com/in/jandresvr) · [CV](https://jandres-vr.vercel.app/cv/CV_Jaime_Andres_Velez_Rojas.pdf)
 
-> The code and the artwork are © Jaime Andrés Vélez Rojas. No license is granted, so all rights are reserved.
+## License
+
+The **source code** is released under the [MIT License](LICENSE): you are free to read it, learn from it and reuse it.
+
+The **personal content and artwork** are not covered by that license and remain © Jaime Andrés Vélez Rojas, all rights reserved:
+
+- the room illustrations, avatar, project screenshots and share image in `public/images/`;
+- the CV in `public/cv/`;
+- the site icons (`favicon.svg`, `favicon.ico`, `apple-touch-icon.png`);
+- the biographical text, job history and project descriptions.
+
+If you build on this code, replace them with your own.
