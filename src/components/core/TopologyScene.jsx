@@ -40,7 +40,7 @@ export default function TopologyScene({ revealed }) {
         <InteractiveDirectorHub />
 
         {/* Canvas HUD (screen space, never tilted) */}
-        <div className="pointer-events-none absolute inset-0 z-40 flex flex-col justify-between p-7 text-[10px] uppercase tracking-[0.3em] text-zinc-600">
+        <div className="pointer-events-none absolute inset-0 z-40 flex flex-col justify-between p-7 text-[10px] uppercase tracking-[0.3em] text-zinc-400">
           <div className="flex items-start justify-end gap-4">
             <div className="pointer-events-auto flex items-center gap-3">
               {!activeNode && <LanguageToggle />}

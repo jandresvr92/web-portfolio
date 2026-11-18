@@ -21,7 +21,7 @@ export default function DossierMeta({ className }) {
       <StatusBadge className="mb-2 hidden w-fit sheet:flex" />
       {rows.map((row) => (
         <div key={row.label} className="grid grid-cols-[auto_1fr] gap-x-2">
-          <span className="uppercase tracking-[0.1em] text-zinc-500">{row.label}:</span>
+          <span className="uppercase tracking-[0.1em] text-zinc-400">{row.label}:</span>
           <span className="uppercase tracking-[0.1em] text-cyan-300/90">{fill(row.value, { years: YEARS_OF_EXPERIENCE })}</span>
         </div>
       ))}

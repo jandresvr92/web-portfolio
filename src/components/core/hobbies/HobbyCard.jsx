@@ -38,7 +38,7 @@ export default function HobbyCard({ item, active, onActivate }) {
         >
           {item.name}
         </span>
-        <span className="text-[8.5px] sheet:text-[12px] uppercase leading-tight tracking-[0.08em] text-zinc-500">
+        <span className="text-[8.5px] sheet:text-[12px] uppercase leading-tight tracking-[0.08em] text-zinc-400">
           {item.buff}
         </span>
       </span>

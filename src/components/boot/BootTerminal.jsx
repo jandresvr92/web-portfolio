@@ -75,7 +75,7 @@ export default function BootTerminal({ onComplete }) {
           <span className="h-2.5 w-2.5 rounded-full bg-zinc-700" />
           <span className="h-2.5 w-2.5 rounded-full bg-zinc-700" />
           <span className="h-2.5 w-2.5 rounded-full bg-zinc-700" />
-          <span className="ml-2 truncate text-[10px] uppercase tracking-[0.28em] text-zinc-500">
+          <span className="ml-2 truncate text-[10px] uppercase tracking-[0.28em] text-zinc-400">
             {boot.window}
           </span>
         </div>
@@ -87,7 +87,7 @@ export default function BootTerminal({ onComplete }) {
               <span className="text-neon">▸</span>
               <span className="text-zinc-300">{line.text}</span>
               {line.done && (
-                <span className="ml-auto text-[10px] uppercase tracking-[0.25em] text-neon/80">
+                <span className="ml-auto text-[10px] uppercase tracking-[0.25em] text-neon">
                   [ ok ]
                 </span>
               )}
@@ -103,9 +103,9 @@ export default function BootTerminal({ onComplete }) {
         </div>
 
         {/* Status bar */}
-        <div className="flex items-center justify-between border-t border-zinc-800 px-3 py-1.5 text-[10px] uppercase tracking-[0.25em] text-zinc-600">
+        <div className="flex items-center justify-between border-t border-zinc-800 px-3 py-1.5 text-[10px] uppercase tracking-[0.25em] text-zinc-400">
           <span>ttys001</span>
-          <span className={cn("transition-colors", finished ? "text-neon/80" : "text-zinc-600")}>
+          <span className={cn("transition-colors", finished ? "text-neon" : "text-zinc-400")}>
             {finished ? boot.linked : boot.booting}
           </span>
         </div>

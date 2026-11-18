@@ -26,14 +26,14 @@ export default function NodeDirectory({ className }) {
       <p className="font-body text-[13px] font-medium tracking-[0.04em] text-zinc-100">
         {copy.brand} <span className="text-neon">{copy.brandAccent}</span>
       </p>
-      <p className="mt-1 text-[10px] tracking-[0.02em] text-neon/80">
+      <p className="mt-1 text-[10px] tracking-[0.02em] text-neon">
         {copy.prompt}
         <span className="ml-0.5 inline-block animate-boot-caret motion-reduce:animate-none">
           _
         </span>
       </p>
 
-      <p className="mt-4 text-[9px] uppercase tracking-[0.24em] text-zinc-600">
+      <p className="mt-4 text-[9px] uppercase tracking-[0.24em] text-zinc-400">
         {copy.directoryTitle}
       </p>
 
@@ -59,7 +59,7 @@ export default function NodeDirectory({ className }) {
                 aria-pressed={activeNode === node.id}
                 className={cn(
                   "flex w-full items-center gap-2 px-1 py-[7px] text-left transition-colors duration-200 focus-visible:outline focus-visible:outline-1 focus-visible:outline-neon",
-                  lit ? accent.text : "text-zinc-500 hover:text-zinc-300"
+                  lit ? accent.text : "text-zinc-400 hover:text-zinc-200"
                 )}
               >
                 <span
@@ -72,7 +72,7 @@ export default function NodeDirectory({ className }) {
                 <span aria-hidden="true" className="shrink-0 text-[10px] text-zinc-600">
                   &gt;
                 </span>
-                <span className="shrink-0 text-[10px] tabular-nums opacity-70">{node.code}</span>
+                <span className="shrink-0 text-[10px] tabular-nums">{node.code}</span>
                 <span className="min-w-0 flex-1 truncate text-[11px] uppercase tracking-[0.08em]">
                   {node.name}
                 </span>

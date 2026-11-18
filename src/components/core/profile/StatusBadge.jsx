@@ -18,7 +18,7 @@ export default function StatusBadge({ className }) {
       <span className="font-mono text-[8px] sheet:text-[12px] uppercase tracking-[0.16em] text-green-300">
         {dossier.status}
       </span>
-      <span className="font-mono text-[8px] sheet:text-[12px] uppercase tracking-[0.16em] text-zinc-500">
+      <span className="font-mono text-[8px] sheet:text-[12px] uppercase tracking-[0.16em] text-zinc-400">
         {dossier.badge}
       </span>
     </div>
