@@ -7,16 +7,6 @@ import { I18nProvider } from "@/lib/i18n/I18nContext";
 const rootRoute = getRouteApi("__root__");
 
 export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Jaime Vélez Rojas // Analista Desarrollador" },
-      {
-        name: "description",
-        content:
-          "Portafolio de Jaime Vélez Rojas, analista desarrollador: integraciones backend, bases de datos relacionales y flujos automatizados.",
-      },
-    ],
-  }),
   component: HomePage,
 });
 

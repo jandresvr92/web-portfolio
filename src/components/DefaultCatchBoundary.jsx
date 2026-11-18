@@ -1,19 +1,24 @@
-import { ErrorComponent, Link, rootRouteId, useMatch, useRouter } from "@tanstack/react-router";
-import { Button } from "@/components/ui/button";
+import { ErrorComponent, useRouter } from "@tanstack/react-router";
+import { useRouteDict } from "@/lib/i18n/useRouteDict";
+import { ActionButton, HomeLink, TerminalScreen } from "./TerminalScreen";
 
 export function DefaultCatchBoundary({ error }) {
   const router = useRouter();
-  const isRoot = useMatch({ strict: false, select: (state) => state.id === rootRouteId });
+  const { errors } = useRouteDict();
 
   return (
-    <div className="mx-auto flex max-w-2xl flex-col items-center gap-4 py-24">
-      <ErrorComponent error={error} />
-      <div className="flex gap-2">
-        <Button variant="outline" onClick={() => router.invalidate()}>
-          Try again
-        </Button>
-        <Button asChild>{isRoot ? <Link to="/">Home</Link> : <Link to="/" onClick={(e) => { e.preventDefault(); window.history.back(); }}>Go back</Link>}</Button>
+    <TerminalScreen
+      title={errors.errorTitle}
+      actions={
+        <>
+          <ActionButton onClick={() => router.invalidate()}>{errors.retry}</ActionButton>
+          <HomeLink>{errors.home}</HomeLink>
+        </>
+      }
+    >
+      <div className="text-left">
+        <ErrorComponent error={error} />
       </div>
-    </div>
+    </TerminalScreen>
   );
 }

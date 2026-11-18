@@ -10,7 +10,7 @@ export const isLang = (value) => LANGUAGES.includes(value);
 
 // First supported language in an Accept-Language header, honouring q-weights:
 // "es-CO,es;q=0.9,en;q=0.8" → "es", "fr-FR,de;q=0.7" → "de", "fr" → null.
-export function langFromAcceptLanguage(header) {
+function langFromAcceptLanguage(header) {
   if (!header) return null;
 
   const ranked = header

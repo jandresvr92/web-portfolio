@@ -1,6 +1,6 @@
 // Per-node accent palettes for the topology. Every class string is written out
 // in full so Tailwind keeps it in the build (no dynamic class names).
-export const NODE_THEMES = {
+const NODE_THEMES = {
   cyan: {
     dot: "bg-cyan-400",
     dotSoft: "bg-cyan-400/40",

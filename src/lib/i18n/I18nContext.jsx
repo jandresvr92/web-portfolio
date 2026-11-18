@@ -7,11 +7,7 @@ import {
   useState,
 } from "react";
 import { DICTS, LANGUAGES } from "./dictionaries";
-import { isLang, readLangCookie, writeLangCookie } from "./lang";
-
-// Where the toggle's choice lived before it moved to a cookie. Read once to
-// carry that choice over, then removed.
-const LEGACY_STORAGE_KEY = "isoglow.lang";
+import { isLang, writeLangCookie } from "./lang";
 
 const I18nContext = createContext(null);
 
@@ -26,25 +22,11 @@ function resolve(dict, path) {
 export function I18nProvider({ initialLang, children }) {
   const [lang, setLang] = useState(isLang(initialLang) ? initialLang : LANGUAGES[0]);
 
-  // One-time migration: a choice saved under the old localStorage key, with no
-  // cookie yet, becomes the cookie so the server honours it from now on.
-  useEffect(() => {
-    try {
-      const stored = window.localStorage.getItem(LEGACY_STORAGE_KEY);
-      if (stored === null) return;
-      window.localStorage.removeItem(LEGACY_STORAGE_KEY);
-      if (isLang(stored) && !isLang(readLangCookie())) {
-        writeLangCookie(stored);
-        setLang(stored);
-      }
-    } catch {
-      // Storage unavailable: nothing to migrate.
-    }
-  }, []);
-
-  // The server set <html lang> for the first render; keep it in step after.
+  // The server set <html lang> and <title> for the first render; keep them in
+  // step when the visitor toggles the language.
   useEffect(() => {
     document.documentElement.lang = lang;
+    document.title = DICTS[lang].meta.title;
   }, [lang]);
 
   // Only an explicit choice writes the cookie: the detected language is not
