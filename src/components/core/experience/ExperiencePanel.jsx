@@ -29,7 +29,7 @@ export default function ExperiencePanel({ currentLocale, className, mobile = fal
       <ol className="mt-6 border-l-2 border-green-500/40 pl-5">
         {data.jobs.map((job, index) => (
           <motion.li
-            key={`${job.company}-${job.date}`}
+            key={job.id}
             initial={{ opacity: 0, x: -10 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.32, delay: index * 0.09, ease: "easeOut" }}

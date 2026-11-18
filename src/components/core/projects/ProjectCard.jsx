@@ -1,12 +1,11 @@
 import { motion } from "framer-motion";
 import ProjectGlyph from "./ProjectGlyph";
-import { PROJECT_IMAGES } from "./projectImages";
 
 // One deployed module. The whole card is the link into the live deployment, so
 // the visual, the title and the body all carry the hover state and open it.
 // The visual is the project's screenshot when it has one, else its glyph.
 export default function ProjectCard({ project, index }) {
-  const image = PROJECT_IMAGES[project.id];
+  const { image } = project;
 
   return (
     <motion.a

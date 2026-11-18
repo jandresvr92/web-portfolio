@@ -28,7 +28,17 @@ export const ACCENTS = {
   },
 };
 
-const DIRECTORY = {
+// Directory entries in display order; `color` is a key of ACCENTS above.
+// Labels and node names per language live in DIRECTORY_COPY below.
+export const DIRECTORY_NODES = [
+  { id: "profile", code: "00", color: "cyan" },
+  { id: "stack", code: "01", color: "orange" },
+  { id: "projects", code: "02", color: "purple" },
+  { id: "experience", code: "03", color: "green" },
+  { id: "hobbies", code: "04", color: "yellow" },
+];
+
+const DIRECTORY_COPY = {
   es: {
     brand: "JAIME ANDRES",
     brandAccent: "- DEV",
@@ -39,13 +49,13 @@ const DIRECTORY = {
     statusLink: "ENLACE: NODO_",
     statusAccess: "[ CLICK PARA ACCEDER ]",
     statusOpen: "ACCESO CONCEDIDO_",
-    nodes: [
-      { id: "profile", code: "00", name: "SOBRE_MÍ", color: "cyan" },
-      { id: "stack", code: "01", name: "STACK_TÉCNICO", color: "orange" },
-      { id: "projects", code: "02", name: "PROYECTOS", color: "purple" },
-      { id: "experience", code: "03", name: "EXPERIENCIA", color: "green" },
-      { id: "hobbies", code: "04", name: "HOBBIES & ARCADE", color: "yellow" },
-    ],
+    nodes: {
+      profile: "SOBRE_MÍ",
+      stack: "STACK_TÉCNICO",
+      projects: "PROYECTOS",
+      experience: "EXPERIENCIA",
+      hobbies: "HOBBIES & ARCADE",
+    },
   },
   en: {
     brand: "JAIME ANDRES",
@@ -57,13 +67,13 @@ const DIRECTORY = {
     statusLink: "LINK: NODE_",
     statusAccess: "[ CLICK TO ENTER ]",
     statusOpen: "ACCESS GRANTED_",
-    nodes: [
-      { id: "profile", code: "00", name: "ABOUT_ME", color: "cyan" },
-      { id: "stack", code: "01", name: "TECH_STACK", color: "orange" },
-      { id: "projects", code: "02", name: "PROJECTS", color: "purple" },
-      { id: "experience", code: "03", name: "EXPERIENCE", color: "green" },
-      { id: "hobbies", code: "04", name: "HOBBIES & ARCADE", color: "yellow" },
-    ],
+    nodes: {
+      profile: "ABOUT_ME",
+      stack: "TECH_STACK",
+      projects: "PROJECTS",
+      experience: "EXPERIENCE",
+      hobbies: "HOBBIES & ARCADE",
+    },
   },
   de: {
     brand: "JAIME ANDRES",
@@ -75,14 +85,17 @@ const DIRECTORY = {
     statusLink: "VERBINDUNG: NODE_",
     statusAccess: "[ KLICK ZUM ÖFFNEN ]",
     statusOpen: "ZUGRIFF GEWÄHRT_",
-    nodes: [
-      { id: "profile", code: "00", name: "ÜBER_MICH", color: "cyan" },
-      { id: "stack", code: "01", name: "TECH_STACK", color: "orange" },
-      { id: "projects", code: "02", name: "PROJEKTE", color: "purple" },
-      { id: "experience", code: "03", name: "ERFAHRUNG", color: "green" },
-      { id: "hobbies", code: "04", name: "HOBBIES & ARCADE", color: "yellow" },
-    ],
+    nodes: {
+      profile: "ÜBER_MICH",
+      stack: "TECH_STACK",
+      projects: "PROJEKTE",
+      experience: "ERFAHRUNG",
+      hobbies: "HOBBIES & ARCADE",
+    },
   },
 };
 
-export const directoryFor = (lang) => DIRECTORY[lang] ?? DIRECTORY.en;
+export function directoryFor(lang) {
+  const { nodes, ...labels } = DIRECTORY_COPY[lang] ?? DIRECTORY_COPY.en;
+  return { ...labels, nodes: DIRECTORY_NODES.map((node) => ({ ...node, name: nodes[node.id] })) };
+}

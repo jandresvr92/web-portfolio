@@ -4,9 +4,9 @@ import { cn } from "@/lib/utils";
 import StackItem from "./StackItem";
 import { stackFor } from "./stackData";
 
-const TABS = ["front", "back", "env"];
+export const TABS = ["front", "back", "env"];
 // Each category mounts its own glyph in the blades' hardware slot.
-const SHAPES = { front: "chip", back: "nodes", env: "atom" };
+export const SHAPES = { front: "chip", back: "nodes", env: "atom" };
 
 // Data-center view of the tech stack node: three switch tabs over four server
 // blades each, closing with the system status line.
@@ -60,7 +60,7 @@ export default function TechStackPanel({ currentLocale, className }) {
           className="mt-4 flex flex-col gap-2.5"
         >
           {data.content[activeTab].map((item) => (
-            <StackItem key={item.name} item={item} shape={SHAPES[activeTab]} />
+            <StackItem key={item.id} item={item} shape={SHAPES[activeTab]} />
           ))}
         </motion.div>
       </AnimatePresence>

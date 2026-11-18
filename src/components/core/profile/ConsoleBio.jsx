@@ -1,4 +1,6 @@
 import { useI18n } from "@/lib/i18n/I18nContext";
+import { fill } from "@/lib/i18n/format";
+import { YEARS_OF_EXPERIENCE } from "../experience/experienceData";
 
 // Bio rendered as a terminal console: scan lines, corner brackets, and cyan
 // highlights on the keywords.
@@ -28,10 +30,10 @@ export default function ConsoleBio({ className }) {
         {bio.map((segment, index) =>
           segment.hl ? (
             <span key={index} className="text-cyan-400">
-              {segment.text}
+              {fill(segment.text, { years: YEARS_OF_EXPERIENCE })}
             </span>
           ) : (
-            <span key={index}>{segment.text}</span>
+            <span key={index}>{fill(segment.text, { years: YEARS_OF_EXPERIENCE })}</span>
           )
         )}
       </p>
