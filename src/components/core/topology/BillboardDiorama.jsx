@@ -83,11 +83,13 @@ export default function BillboardDiorama({ node, lit, dimmed, glowClass, layoutI
               width={boxWidth}
               height={boxHeight}
               draggable={false}
-              // The dim lives on the flat artwork itself: an opacity on the
-              // tilted wrapper would flatten its 3D transforms.
+              // The dim lives on the flat artwork itself: a filter on the tilted
+              // wrapper would flatten its 3D transforms. It darkens the room
+              // instead of fading it, so the room stays opaque and keeps hiding
+              // the cables that run behind it.
               className={cn(
-                "h-full w-full select-none object-contain transition-opacity duration-300",
-                dimmed ? "opacity-45" : lit ? cn("opacity-100", glowClass) : "opacity-95"
+                "h-full w-full select-none object-contain transition-[filter] duration-300",
+                dimmed ? "brightness-[.45]" : lit ? glowClass : "brightness-95"
               )}
             />
           </motion.div>
