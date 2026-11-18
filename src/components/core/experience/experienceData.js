@@ -8,7 +8,7 @@ export const experienceData = {
       {
         role: "Software Developer",
         company: "Fuse Tech",
-        date: "August 2025 - Nov 2025",
+        date: "Ago 2025 - Nov 2025",
         achievements: [
           "Resolví bugs críticos y optimicé el rendimiento de la UI.",
           "Colaboré en el desarrollo de funcionalidades y despliegues ágiles.",
@@ -41,6 +41,15 @@ export const experienceData = {
           "Contribución directa a interfaces de plataforma global de streaming deportivo.",
         ],
       },
+      {
+        role: "Full-stack Developer",
+        company: "TALENTA 365",
+        date: "Jun 2020 - Dic 2020",
+        achievements: [
+          "Plataforma de preselección de candidatos que redujo costos de selección y agilizó la contratación.",
+          "Diseño de esquema PostgreSQL que simplificó las consultas.",
+        ],
+      },
     ],
   },
   en: {
@@ -51,7 +60,7 @@ export const experienceData = {
       {
         role: "Software Developer",
         company: "Fuse Tech",
-        date: "August 2025 - Nov 2025",
+        date: "Aug 2025 - Nov 2025",
         achievements: [
           "Resolved critical bugs and optimized UI performance.",
           "Collaborated on feature development and agile deployments.",
@@ -84,6 +93,15 @@ export const experienceData = {
           "Directly contributed to the interfaces of a global sports streaming platform.",
         ],
       },
+      {
+        role: "Full-stack Developer",
+        company: "TALENTA 365",
+        date: "Jun 2020 - Dec 2020",
+        achievements: [
+          "Built a candidate pre-screening platform that cut selection costs and sped up hiring.",
+          "Designed a PostgreSQL schema that simplified the queries.",
+        ],
+      },
     ],
   },
   de: {
@@ -94,7 +112,7 @@ export const experienceData = {
       {
         role: "Software Developer",
         company: "Fuse Tech",
-        date: "August 2025 - Nov 2025",
+        date: "Aug 2025 - Nov 2025",
         achievements: [
           "Behebung kritischer Bugs und Optimierung der UI-Leistung.",
           "Zusammenarbeit bei der Funktionsentwicklung und agilen Deployments.",
@@ -125,6 +143,15 @@ export const experienceData = {
         achievements: [
           "Leitung einer Testautomatisierungsinitiative (BDD und TDD) mit Selenium.",
           "Direkter Beitrag zu den Schnittstellen einer globalen Sport-Streaming-Plattform.",
+        ],
+      },
+      {
+        role: "Full-Stack-Entwickler",
+        company: "TALENTA 365",
+        date: "Jun 2020 - Dez 2020",
+        achievements: [
+          "Plattform zur Bewerbervorauswahl, die Auswahlkosten senkte und Einstellungen beschleunigte.",
+          "Entwurf eines PostgreSQL-Schemas, das die Abfragen vereinfachte.",
         ],
       },
     ],
