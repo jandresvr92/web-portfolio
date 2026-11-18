@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jandres-vr.vercel.app/sitemap.xml

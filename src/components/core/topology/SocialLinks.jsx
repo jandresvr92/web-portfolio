@@ -1,8 +1,9 @@
 import { Instagram, Linkedin, Twitter } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { LINKEDIN_URL } from "@/lib/site";
 
 const SOCIALS = [
-  { id: "linkedin", label: "LinkedIn", href: "https://www.linkedin.com/in/jandresvr/", Icon: Linkedin },
+  { id: "linkedin", label: "LinkedIn", href: LINKEDIN_URL, Icon: Linkedin },
   { id: "instagram", label: "Instagram", href: "https://www.instagram.com/jandres_vr/", Icon: Instagram },
   { id: "x", label: "X", href: "https://x.com/JimmyScr", Icon: Twitter },
 ];

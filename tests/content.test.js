@@ -7,7 +7,8 @@ import path from "node:path";
 import { describe, expect, test } from "vitest";
 import { DICTS, LANGUAGES } from "@/lib/i18n/dictionaries";
 import { fill } from "@/lib/i18n/format";
-import { OG_IMAGE, SITE_URL } from "@/lib/site";
+import { GITHUB_URL, LINKEDIN_URL, OG_IMAGE, PERSON, SITE_URL } from "@/lib/site";
+import { KNOWS_ABOUT, personJsonLd } from "@/lib/seo";
 import { LOCKED_SLOTS, PROJECTS, projectsFor } from "@/components/core/projects/projectsData";
 import { PROJECTS_COPY } from "@/components/core/projects/projectsCopy";
 import { GLYPHS } from "@/components/core/projects/ProjectGlyph";
@@ -261,5 +262,35 @@ describe("map and assets", () => {
     for (const url of [OG_IMAGE.path, CV_PATH, AVATAR_PATH, "/favicon.svg", "/favicon.ico", "/apple-touch-icon.png"]) {
       expectPublicFile(url, "site");
     }
+  });
+});
+
+// ---------- search engines ----------
+
+describe("seo", () => {
+  test("robots.txt and sitemap.xml point at SITE_URL", () => {
+    const robots = fs.readFileSync(publicFile("/robots.txt"), "utf8");
+    const sitemap = fs.readFileSync(publicFile("/sitemap.xml"), "utf8");
+    expect(robots, "robots.txt must reference the sitemap on SITE_URL").toContain(`Sitemap: ${SITE_URL}/sitemap.xml`);
+    expect(sitemap, "sitemap.xml must list SITE_URL").toContain(`<loc>${SITE_URL}/</loc>`);
+  });
+
+  test("the Person JSON-LD is complete and uses absolute URLs", () => {
+    for (const lang of LANGUAGES) {
+      const ld = personJsonLd({ description: DICTS[lang].meta.description });
+      expect(ld["@type"]).toBe("Person");
+      expect(ld.name).toBe(PERSON.name);
+      expect(ld.description, lang).toBeTruthy();
+      expect(ld.alternateName).toContain("Jaime Andres Velez Rojas");
+      expect(ld.sameAs).toEqual([LINKEDIN_URL, GITHUB_URL]);
+      for (const url of [ld.url, ld.image, ...ld.sameAs]) expect(url, "JSON-LD URLs are absolute https").toMatch(/^https:\/\//);
+      expectPublicFile(ld.image.slice(SITE_URL.length), "JSON-LD image");
+    }
+    expect(KNOWS_ABOUT).toContain("Angular");
+    expect(KNOWS_ABOUT.every((skill) => skill.trim() === skill && skill.length > 0)).toBe(true);
+  });
+
+  test("every language has a role for the profile summary heading", () => {
+    for (const lang of LANGUAGES) expect(DICTS[lang].meta.role, lang).toBeTruthy();
   });
 });
