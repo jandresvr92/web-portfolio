@@ -28,7 +28,7 @@ export const ACCENTS = {
   },
 };
 
-export const DIRECTORY = {
+const DIRECTORY = {
   es: {
     brand: "JAIME ANDRES",
     brandAccent: "- DEV",

@@ -71,6 +71,20 @@ export const DICTS = {
       linked: "core linked",
     },
     lang: { label: "Language", switch: "Switch language" },
+    errors: {
+      notFoundTitle: "404 // node not found",
+      notFound: "The page you are looking for does not exist.",
+      errorTitle: "fatal // something broke",
+      back: "go back",
+      home: "start over",
+      retry: "try again",
+    },
+    meta: {
+      title: "Jaime Vélez Rojas // Software Developer",
+      description:
+        "Portfolio of Jaime Andrés Vélez Rojas, software developer: web interfaces, backend integrations, relational databases and automated workflows.",
+      locale: "en_US",
+    },
   },
   es: {
     code: "ES",
@@ -138,6 +152,20 @@ export const DICTS = {
       linked: "core enlazado",
     },
     lang: { label: "Idioma", switch: "Cambiar idioma" },
+    errors: {
+      notFoundTitle: "404 // nodo no encontrado",
+      notFound: "La página que buscas no existe.",
+      errorTitle: "fatal // algo falló",
+      back: "volver",
+      home: "ir al inicio",
+      retry: "reintentar",
+    },
+    meta: {
+      title: "Jaime Vélez Rojas // Desarrollador de Software",
+      description:
+        "Portafolio de Jaime Andrés Vélez Rojas, desarrollador de software: interfaces web, integraciones backend, bases de datos relacionales y flujos automatizados.",
+      locale: "es_CO",
+    },
   },
   de: {
     code: "DE",
@@ -205,5 +233,19 @@ export const DICTS = {
       linked: "core verbunden",
     },
     lang: { label: "Sprache", switch: "Sprache wechseln" },
+    errors: {
+      notFoundTitle: "404 // Knoten nicht gefunden",
+      notFound: "Die gesuchte Seite existiert nicht.",
+      errorTitle: "fatal // etwas ist schiefgelaufen",
+      back: "zurück",
+      home: "zur Startseite",
+      retry: "erneut versuchen",
+    },
+    meta: {
+      title: "Jaime Vélez Rojas // Softwareentwickler",
+      description:
+        "Portfolio von Jaime Andrés Vélez Rojas, Softwareentwickler: Weboberflächen, Backend-Integrationen, relationale Datenbanken und automatisierte Abläufe.",
+      locale: "de_DE",
+    },
   },
 };

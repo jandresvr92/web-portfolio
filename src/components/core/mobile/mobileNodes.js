@@ -1,47 +1,17 @@
-import { CORE } from "../topology/layout";
+import { CORE, NODES } from "../topology/layout";
 
 // The mobile column: every node of the map, stacked in ascending order so the
-// profile (01) opens the feed, followed by 02 through 05.
+// profile (01) opens the feed, followed by 02 through 05. Index, accent, size
+// and artwork come from the desktop layout, so both views stay in step.
 export const MOBILE_NODES = [
-  {
-    key: "profile",
-    nodeId: "profile",
-    index: "01",
-    accent: "cyan",
-    size: 300,
-    asset: CORE.asset,
-    profile: true,
-  },
-  {
-    key: "deployment",
-    nodeId: "projects",
-    index: "02",
-    accent: "purple",
-    size: 260,
-    asset: "/images/dioramas/proyectos-v6.png",
-  },
-  {
-    key: "processing",
-    nodeId: "stack",
-    index: "03",
-    accent: "orange",
-    size: 260,
-    asset: "/images/dioramas/stack.png",
-  },
-  {
-    key: "operations",
-    nodeId: "experience",
-    index: "04",
-    accent: "lime",
-    size: 260,
-    asset: "/images/dioramas/experiencia-v2.png",
-  },
-  {
-    key: "hobbies",
-    nodeId: "hobbies",
-    index: "05",
-    accent: "amber",
-    size: 260,
-    asset: "/images/dioramas/hobbies.png",
-  },
-];
+  { key: "profile", nodeId: CORE.id, index: CORE.index, accent: CORE.accent, size: CORE.size, asset: CORE.asset, profile: true },
+  ...NODES.map((node) => ({
+    // `key` names the node's copy in dictionaries (clusters.<key>).
+    key: node.dossier,
+    nodeId: node.id,
+    index: node.index,
+    accent: node.accent,
+    size: node.size,
+    asset: node.asset,
+  })),
+].sort((a, b) => a.index.localeCompare(b.index));

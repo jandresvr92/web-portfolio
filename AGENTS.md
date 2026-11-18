@@ -8,7 +8,7 @@ Isometric portfolio built with TanStack Start (React 19, **plain JavaScript, no 
 - Import with the `@/` alias (`@/lib/utils` → `src/lib/utils`). It is defined in both `vite.config.js` and `jsconfig.json`; keep them in sync.
 - Pages are server-rendered, so the server and the first client render must match. Read `window`, `document` and storage only in effects or handlers.
 - Visible copy comes in three languages (`en`, `es`, `de`). Shared strings live in `src/lib/i18n/dictionaries.js`, and each section's strings live in its `*Data.js`. When you add a string, add it in all three.
-- Static files go in `public/images/` or `public/cv/`, never `public/assets/`. That path is reserved for Vite's hashed bundles and cached immutably on Vercel.
+- Static files go in `public/images/` or `public/cv/`, never `public/assets/`. The only exception is the site icons (`favicon.svg`, `favicon.ico`, `apple-touch-icon.png`), which stay at the root of `public/` because browsers request them there. That path is reserved for Vite's hashed bundles and cached immutably on Vercel.
 - `vite.config.js` plugin order is `tanstackStart()`, `nitro()`, `react()`, as in the TanStack Start hosting guide.
 - `nitro` is pinned to an exact release candidate (v3 has no stable release yet). Upgrade it on purpose, and check `npm run build` and `NITRO_PRESET=vercel npm run build` afterwards.
 

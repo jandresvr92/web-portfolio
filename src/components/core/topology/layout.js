@@ -3,7 +3,7 @@
 // grid: +X runs screen up-right, +Y screen down-right, -X down-left, -Y up-left.
 export const PLANE_SIZE = 1200;
 export const TILT_X = 60;
-export const TILT_Z = -45;
+const TILT_Z = -45;
 
 // The stage's perspective, shared so a billboard pushed forward in depth can
 // exactly cancel the size the projection adds.
@@ -23,7 +23,7 @@ export const CORE = {
   x: 600,
   y: 600,
   size: 300,
-  asset: "/images/dioramas/sobre-mi-v3.png",
+  asset: "/images/dioramas/sobre-mi-v3.webp",
   // cut out of its black background and framed like the ring nodes, keeping the
   // centre room a step larger, with its front corner on the last row so the
   // cables converge on its base
@@ -40,7 +40,7 @@ export const NODES = [
     x: 200,
     y: 600,
     size: 260,
-    asset: "/images/dioramas/proyectos-v6.png",
+    asset: "/images/dioramas/proyectos-v6.webp",
     // cut out of its black background and framed like the other rooms, with its
     // front corner on the last row so the purple cable meets its base
     framing: { sourceAspect: 687 / 1024, contentFraction: 0.831, contentWidth: 250, baseDrop: 61 },
@@ -53,7 +53,7 @@ export const NODES = [
     x: 600,
     y: 200,
     size: 260,
-    asset: "/images/dioramas/stack.png",
+    asset: "/images/dioramas/stack.webp",
     // cut out of its black background and framed like the other rooms, with its
     // front corner on the last row so the orange cable meets its base
     framing: { sourceAspect: 687 / 1024, contentFraction: 0.831, contentWidth: 250, baseDrop: 61 },
@@ -66,7 +66,7 @@ export const NODES = [
     x: 600,
     y: 1000,
     size: 260,
-    asset: "/images/dioramas/experiencia-v2.png",
+    asset: "/images/dioramas/experiencia-v2.webp",
     // cut out of its black background and framed like the other rooms, with its
     // front corner on the last row so the lime cable meets its base
     framing: { sourceAspect: 687 / 1024, contentFraction: 0.831, contentWidth: 250, baseDrop: 61 },
@@ -79,7 +79,7 @@ export const NODES = [
     x: 1000,
     y: 600,
     size: 260,
-    asset: "/images/dioramas/hobbies.png",
+    asset: "/images/dioramas/hobbies.webp",
     // cut out of its black background and framed like the projects room, with
     // its front corner on the last row so the amber cable meets its base
     framing: { sourceAspect: 687 / 1024, contentFraction: 0.827, contentWidth: 250, baseDrop: 61 },
@@ -90,6 +90,6 @@ export const NODES = [
 export const layoutIdFor = (id) => `nodo-${id}`;
 export const LAYOUT_SPRING = { type: "spring", stiffness: 210, damping: 30, mass: 0.9 };
 
-export const ALL_NODES = [CORE, ...NODES];
+const ALL_NODES = [CORE, ...NODES];
 
 export const nodeById = (id) => ALL_NODES.find((node) => node.id === id);

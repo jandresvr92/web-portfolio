@@ -1,6 +1,6 @@
 // Inventory copy of the hobbies node, one complete dictionary per locale. The
 // panel renders only the dictionary of the active language.
-export const HOBBIES_DATA = {
+const HOBBIES_DATA = {
   es: {
     title: "HOBBIES",
     subtitle: "FUERA DE SERVICIO",

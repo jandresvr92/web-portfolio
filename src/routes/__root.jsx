@@ -2,40 +2,47 @@ import { HeadContent, Outlet, Scripts, createRootRoute } from "@tanstack/react-r
 import { DefaultCatchBoundary } from "@/components/DefaultCatchBoundary";
 import { NotFound } from "@/components/NotFound";
 import { detectLang } from "@/lib/i18n/detectLang";
-import { LANGUAGES } from "@/lib/i18n/dictionaries";
+import { DICTS, LANGUAGES } from "@/lib/i18n/dictionaries";
 import appCss from "@/index.css?url";
 
 export const Route = createRootRoute({
   // The visitor's language (toggle cookie, else browser), resolved per request
   // so the server renders the page in it. Pages read it from here.
   loader: () => ({ lang: detectLang() }),
-  // Per-page <title>/meta come from each route's head(); this is the shared base.
-  head: () => ({
-    meta: [
-      { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Jaime Andrés Dev - Frontend Analyst" },
-      {
-        name: "description",
-        content:
-          "Portafolio de Jaime Andrés Vélez Rojas, Frontend Analyst: interfaces web, integraciones backend y flujos automatizados.",
-      },
-      { name: "author", content: "Jaime Andrés Vélez Rojas" },
-      { name: "theme-color", content: "#09090b" },
-      { name: "color-scheme", content: "dark" },
-      { property: "og:type", content: "website" },
-      { property: "og:locale", content: "es_CO" },
-      { property: "og:title", content: "Jaime Andrés Dev - Frontend Analyst" },
-      {
-        property: "og:description",
-        content: "Portafolio de Jaime Andrés Vélez Rojas, Frontend Analyst.",
-      },
-      { name: "twitter:card", content: "summary" },
-    ],
-    links: [
-      { rel: "stylesheet", href: appCss },
-    ],
-  }),
+  // Base <title>/meta in the visitor's language (the same one the page renders
+  // in). A route can override them from its own head().
+  head: ({ loaderData }) => {
+    const { meta } = DICTS[loaderData?.lang] ?? DICTS[LANGUAGES[0]];
+    return {
+      meta: [
+        { charSet: "utf-8" },
+        { name: "viewport", content: "width=device-width, initial-scale=1" },
+        { title: meta.title },
+        { name: "description", content: meta.description },
+        { name: "author", content: "Jaime Andrés Vélez Rojas" },
+        { name: "theme-color", content: "#09090b" },
+        { name: "color-scheme", content: "dark" },
+        { property: "og:type", content: "website" },
+        { property: "og:locale", content: meta.locale },
+        { property: "og:title", content: meta.title },
+        { property: "og:description", content: meta.description },
+        { name: "twitter:card", content: "summary" },
+      ],
+      links: [
+        // favicon.ico stays at the root for clients that request it directly.
+        { rel: "icon", href: "/favicon.ico", sizes: "48x48" },
+        { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
+        { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
+        { rel: "preconnect", href: "https://fonts.googleapis.com" },
+        { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+        {
+          rel: "stylesheet",
+          href: "https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&display=swap",
+        },
+        { rel: "stylesheet", href: appCss },
+      ],
+    };
+  },
   errorComponent: DefaultCatchBoundary,
   notFoundComponent: () => <NotFound />,
   shellComponent: RootDocument,
@@ -52,11 +59,14 @@ function RootDocument({ children }) {
   const lang = Route.useLoaderData({ select: (data) => data?.lang }) ?? LANGUAGES[0];
 
   return (
-    <html lang={lang}>
+    // Browser extensions (Grammarly, LanguageTool…) add attributes to <html> and
+    // <body> before hydration. This ignores those two elements' own attributes
+    // only; mismatches deeper in the tree are still reported.
+    <html lang={lang} suppressHydrationWarning>
       <head>
         <HeadContent />
       </head>
-      <body>
+      <body suppressHydrationWarning>
         {children}
         <Scripts />
       </body>

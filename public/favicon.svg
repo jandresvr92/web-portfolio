@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- An isometric cube in the site's neon amber, like the map's rooms. -->
+  <rect width="64" height="64" rx="12" fill="#09090b"/>
+  <path d="M32 9 52 20.5 32 32 12 20.5Z" fill="#ffa600"/>
+  <path d="M12 20.5 32 32v23L12 43.5Z" fill="#b37400"/>
+  <path d="M52 20.5 32 32v23l20-11.5Z" fill="#664200"/>
+  <path d="M32 9 52 20.5v23L32 55 12 43.5v-23Z M32 32v23 M12 20.5 32 32l20-11.5" fill="none" stroke="#ffd27a" stroke-width="1.5" stroke-linejoin="round"/>
+</svg>
