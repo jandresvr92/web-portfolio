@@ -30,7 +30,7 @@ export const CORE = {
   framing: { sourceAspect: 687 / 1024, contentFraction: 0.831, contentWidth: 290, baseDrop: 72 },
 };
 
-// `dossier` points at the localized copy in dictionaries (clusters.<dossier>).
+// `dossier` is the node's internal name (the mobile column keys its cards by it).
 export const NODES = [
   {
     id: "projects",

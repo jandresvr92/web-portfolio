@@ -11,14 +11,12 @@ import { MOBILE_NODES } from "./mobileNodes";
 // Mobile-only experience: every node of the map stacked in a single column.
 // Opening one fills the screen with its diagram on top and its content below.
 export default function MobileNodeStack({ revealed }) {
-  const { t, dict } = useI18n();
+  const { t } = useI18n();
   const [openKey, setOpenKey] = useState(null);
 
   const open = MOBILE_NODES.find((node) => node.key === openKey) ?? null;
 
   const titleFor = (node) => t(`nodes.${node.nodeId}`);
-  const roleFor = (node) =>
-    node.profile ? dict.panels.hero.role : dict.clusters[node.key].role;
 
   return (
     <div
@@ -57,7 +55,6 @@ export default function MobileNodeStack({ revealed }) {
               key={node.key}
               node={node}
               title={titleFor(node)}
-              role={roleFor(node)}
               onOpen={() => setOpenKey(node.key)}
             />
           ))}

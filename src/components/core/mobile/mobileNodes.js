@@ -6,7 +6,7 @@ import { CORE, NODES } from "../topology/layout";
 export const MOBILE_NODES = [
   { key: "profile", nodeId: CORE.id, index: CORE.index, accent: CORE.accent, size: CORE.size, asset: CORE.asset, profile: true },
   ...NODES.map((node) => ({
-    // `key` names the node's copy in dictionaries (clusters.<key>).
+    // `key` identifies the card; it is the node's dossier name.
     key: node.dossier,
     nodeId: node.id,
     index: node.index,

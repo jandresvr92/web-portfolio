@@ -1,6 +1,5 @@
 // Localized copy shared across the portfolio scene; components read it
 // through `useI18n()`. Section-specific copy lives next to each section's data.
-// `clusters.<key>.role` is the subtitle each node shows in the mobile column.
 
 export const LANGUAGES = ["en", "es", "de"];
 
@@ -47,12 +46,6 @@ export const DICTS = {
           ],
         },
       },
-    },
-    clusters: {
-      operations: { role: "EXPERIENCE" },
-      deployment: { role: "PROJECTS" },
-      hobbies: { role: "HOBBIES" },
-      processing: { role: "TECH STACK" },
     },
     boot: {
       label: "Boot sequence",
@@ -130,12 +123,6 @@ export const DICTS = {
         },
       },
     },
-    clusters: {
-      operations: { role: "EXPERIENCIA" },
-      deployment: { role: "PROYECTOS" },
-      hobbies: { role: "HOBBIES" },
-      processing: { role: "STACK TÉCNICO" },
-    },
     boot: {
       label: "Secuencia de arranque",
       window: "ROOT@JAIME-ANDRES — BOOT_SEQ",
@@ -210,12 +197,6 @@ export const DICTS = {
           ],
         },
       },
-    },
-    clusters: {
-      operations: { role: "ERFAHRUNG" },
-      deployment: { role: "PROJEKTE" },
-      hobbies: { role: "HOBBYS" },
-      processing: { role: "TECH-STACK" },
     },
     boot: {
       label: "Startsequenz",
