@@ -4,7 +4,7 @@ import { themeFor } from "../nodeTheme";
 import NodeDiagram from "./NodeDiagram";
 
 // One row of the mobile column: the node's diagram over its indexed label.
-export default function MobileNodeCard({ node, title, role, onOpen }) {
+export default function MobileNodeCard({ node, title, onOpen }) {
   const theme = themeFor(node.accent);
 
   return (
@@ -27,11 +27,6 @@ export default function MobileNodeCard({ node, title, role, onOpen }) {
         <span className="min-w-0 flex-1 truncate text-[15px] uppercase tracking-[0.1em] text-zinc-100">
           {title}
         </span>
-        {role && (
-          <span className="shrink-0 text-[11px] uppercase tracking-[0.1em] text-zinc-500">
-            {role}
-          </span>
-        )}
         <ChevronRight className={cn("h-5 w-5 shrink-0", theme.textSoft)} />
       </div>
     </button>
