@@ -19,7 +19,7 @@ export const DICTS = {
     panels: {
       hero: {
         name: "JAIME VÉLEZ ROJAS",
-        role: "FRONTEND DEVELOPER",
+        role: "FULL-STACK DEVELOPER",
         download: "download_cv",
         dossier: {
           tag: "dossier // agent_file",
@@ -27,21 +27,23 @@ export const DICTS = {
           badge: "sys_admin",
           meta: [
             { label: "location", value: "medellín" },
-            { label: "role", value: "frontend" },
+            { label: "role", value: "full-stack" },
             { label: "exp", value: "3 yrs" },
           ],
           bio: [
-            { text: "I build interactive digital experiences, from data-heavy dashboards to 3D scenes on the web. With " },
+            { text: "I build complete web products, from the database to the interface, with a strong frontend core. With " },
             { text: "3+ years", hl: true },
             { text: " of experience across " },
             { text: "Angular", hl: true },
             { text: ", " },
             { text: "React", hl: true },
+            { text: ", " },
+            { text: "Node.js", hl: true },
             { text: " and " },
-            { text: "TypeScript", hl: true },
-            { text: ", I have built reactive data visualizations, migrated monolithic platforms to microservices and turned Figma designs into polished interfaces. I’m a proud tech geek and relentless learner, always experimenting with " },
+            { text: "PostgreSQL", hl: true },
+            { text: ", I have built reactive data visualizations, designed relational schemas, migrated monolithic platforms to microservices and turned Figma designs into polished interfaces. I’m a proud tech geek and relentless learner, always experimenting with " },
             { text: "3D web", hl: true },
-            { text: " environments, gamified UIs and solid database design. I bring analytical problem-solving and a creative flair to every project, always aiming to deliver tangible value. Let’s build something awesome." },
+            { text: " environments and gamified UIs. I bring analytical problem-solving and a creative flair to every layer of the stack, always aiming to deliver tangible value. Let’s build something awesome." },
           ],
         },
       },
@@ -74,10 +76,11 @@ export const DICTS = {
       retry: "try again",
     },
     meta: {
-      title: "Jaime Vélez Rojas // Frontend Developer",
+      title: "Jaime Vélez Rojas // Full-stack Developer",
       description:
-        "Portfolio of Jaime Andrés Vélez Rojas, frontend developer with Angular and React: data visualization, interactive interfaces and 3D web experiences.",
+        "Portfolio of Jaime Andrés Vélez Rojas, full-stack developer with Angular, React, Node.js and PostgreSQL: web apps, data visualization and 3D experiences.",
       locale: "en_US",
+      imageAlt: "Jaime Vélez Rojas, full-stack developer, beside the isometric rooms of his portfolio.",
     },
   },
   es: {
@@ -94,7 +97,7 @@ export const DICTS = {
     panels: {
       hero: {
         name: "JAIME VÉLEZ ROJAS",
-        role: "DESARROLLADOR FRONTEND",
+        role: "DESARROLLADOR FULL-STACK",
         download: "descargar_cv",
         dossier: {
           tag: "dossier // agent_file",
@@ -102,21 +105,23 @@ export const DICTS = {
           badge: "sys_admin",
           meta: [
             { label: "location", value: "medellín" },
-            { label: "role", value: "frontend" },
+            { label: "role", value: "full-stack" },
             { label: "exp", value: "3 años" },
           ],
           bio: [
-            { text: "Construyo experiencias digitales interactivas, desde dashboards cargados de datos hasta escenas 3D en la web. Con más de " },
+            { text: "Construyo productos web completos, de la base de datos a la interfaz, con un núcleo fuerte en frontend. Con más de " },
             { text: "3 años", hl: true },
             { text: " de experiencia en " },
             { text: "Angular", hl: true },
             { text: ", " },
             { text: "React", hl: true },
+            { text: ", " },
+            { text: "Node.js", hl: true },
             { text: " y " },
-            { text: "TypeScript", hl: true },
-            { text: ", he creado visualizaciones de datos reactivas, migrado plataformas monolíticas a microservicios y convertido diseños de Figma en interfaces pulidas. Soy un geek de la tecnología y aprendiz incansable, siempre experimentando con entornos " },
+            { text: "PostgreSQL", hl: true },
+            { text: ", he creado visualizaciones de datos reactivas, diseñado esquemas relacionales, migrado plataformas monolíticas a microservicios y convertido diseños de Figma en interfaces pulidas. Soy un geek de la tecnología y aprendiz incansable, siempre experimentando con entornos " },
             { text: "web 3D", hl: true },
-            { text: ", interfaces gamificadas y un diseño de datos sólido. Aporto resolución analítica de problemas y una chispa creativa a cada proyecto, buscando siempre entregar valor tangible. Construyamos algo increíble." },
+            { text: " e interfaces gamificadas. Aporto resolución analítica de problemas y una chispa creativa a cada capa del stack, buscando siempre entregar valor tangible. Construyamos algo increíble." },
           ],
         },
       },
@@ -149,10 +154,11 @@ export const DICTS = {
       retry: "reintentar",
     },
     meta: {
-      title: "Jaime Vélez Rojas // Desarrollador Frontend",
+      title: "Jaime Vélez Rojas // Desarrollador Full-stack",
       description:
-        "Portafolio de Jaime Andrés Vélez Rojas, desarrollador frontend con Angular y React: visualización de datos, interfaces interactivas y experiencias web 3D.",
+        "Portafolio de Jaime Andrés Vélez Rojas, desarrollador full-stack con Angular, React, Node.js y PostgreSQL: aplicaciones web, visualización de datos y experiencias 3D.",
       locale: "es_CO",
+      imageAlt: "Jaime Vélez Rojas, desarrollador full-stack, junto a las salas isométricas de su portafolio.",
     },
   },
   de: {
@@ -169,7 +175,7 @@ export const DICTS = {
     panels: {
       hero: {
         name: "JAIME VÉLEZ ROJAS",
-        role: "FRONTEND-ENTWICKLER",
+        role: "FULL-STACK-ENTWICKLER",
         download: "lebenslauf_laden",
         dossier: {
           tag: "dossier // agent_file",
@@ -177,21 +183,23 @@ export const DICTS = {
           badge: "sys_admin",
           meta: [
             { label: "location", value: "medellín" },
-            { label: "role", value: "frontend" },
+            { label: "role", value: "full-stack" },
             { label: "exp", value: "3 jahre" },
           ],
           bio: [
-            { text: "Ich entwickle interaktive digitale Erlebnisse, von datenreichen Dashboards bis zu 3D-Szenen im Web. Mit über " },
+            { text: "Ich entwickle komplette Webprodukte, von der Datenbank bis zur Oberfläche, mit einem starken Frontend-Kern. Mit über " },
             { text: "3 Jahren", hl: true },
             { text: " Erfahrung in " },
             { text: "Angular", hl: true },
             { text: ", " },
             { text: "React", hl: true },
+            { text: ", " },
+            { text: "Node.js", hl: true },
             { text: " und " },
-            { text: "TypeScript", hl: true },
-            { text: " habe ich reaktive Datenvisualisierungen gebaut, monolithische Plattformen auf Microservices migriert und Figma-Designs in ausgefeilte Oberflächen verwandelt. Ich bin ein stolzer Tech-Geek und unermüdlicher Lernender, immer am Experimentieren mit " },
+            { text: "PostgreSQL", hl: true },
+            { text: " habe ich reaktive Datenvisualisierungen gebaut, relationale Schemas entworfen, monolithische Plattformen auf Microservices migriert und Figma-Designs in ausgefeilte Oberflächen verwandelt. Ich bin ein stolzer Tech-Geek und unermüdlicher Lernender, immer am Experimentieren mit " },
             { text: "3D-Webumgebungen", hl: true },
-            { text: ", gamifizierten UIs und solidem Datenbankdesign. Ich bringe analytisches Problemlösen und eine kreative Note in jedes Projekt, stets mit dem Ziel, echten Mehrwert zu liefern. Bauen wir etwas Großartiges." },
+            { text: " und gamifizierten UIs. Ich bringe analytisches Problemlösen und eine kreative Note in jede Schicht des Stacks, stets mit dem Ziel, echten Mehrwert zu liefern. Bauen wir etwas Großartiges." },
           ],
         },
       },
@@ -224,10 +232,11 @@ export const DICTS = {
       retry: "erneut versuchen",
     },
     meta: {
-      title: "Jaime Vélez Rojas // Frontend-Entwickler",
+      title: "Jaime Vélez Rojas // Full-Stack-Entwickler",
       description:
-        "Portfolio von Jaime Andrés Vélez Rojas, Frontend-Entwickler mit Angular und React: Datenvisualisierung, interaktive Oberflächen und 3D-Weberlebnisse.",
+        "Portfolio von Jaime Andrés Vélez Rojas, Full-Stack-Entwickler mit Angular, React, Node.js und PostgreSQL: Web-Apps, Datenvisualisierung und 3D-Erlebnisse.",
       locale: "de_DE",
+      imageAlt: "Jaime Vélez Rojas, Full-Stack-Entwickler, neben den isometrischen Räumen seines Portfolios.",
     },
   },
 };

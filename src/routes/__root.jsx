@@ -3,6 +3,7 @@ import { DefaultCatchBoundary } from "@/components/DefaultCatchBoundary";
 import { NotFound } from "@/components/NotFound";
 import { detectLang } from "@/lib/i18n/detectLang";
 import { DICTS, LANGUAGES } from "@/lib/i18n/dictionaries";
+import { OG_IMAGE, SITE_URL } from "@/lib/site";
 import appCss from "@/index.css?url";
 
 export const Route = createRootRoute({
@@ -26,9 +27,17 @@ export const Route = createRootRoute({
         { property: "og:locale", content: meta.locale },
         { property: "og:title", content: meta.title },
         { property: "og:description", content: meta.description },
-        { name: "twitter:card", content: "summary" },
+        { property: "og:url", content: `${SITE_URL}/` },
+        { property: "og:image", content: `${SITE_URL}${OG_IMAGE.path}` },
+        { property: "og:image:width", content: String(OG_IMAGE.width) },
+        { property: "og:image:height", content: String(OG_IMAGE.height) },
+        { property: "og:image:alt", content: meta.imageAlt },
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:image", content: `${SITE_URL}${OG_IMAGE.path}` },
+        { name: "twitter:image:alt", content: meta.imageAlt },
       ],
       links: [
+        { rel: "canonical", href: `${SITE_URL}/` },
         // favicon.ico stays at the root for clients that request it directly.
         { rel: "icon", href: "/favicon.ico", sizes: "48x48" },
         { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
