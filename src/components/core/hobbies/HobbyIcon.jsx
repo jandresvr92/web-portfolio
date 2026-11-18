@@ -1,7 +1,7 @@
 import { Coffee, Gamepad2, Grid3X3, Mountain, Music4, PenLine } from "lucide-react";
 
 // One simple line icon per inventory item, keyed by the dictionary's icon id.
-const ICONS = {
+export const ICONS = {
   ViolinIcon: Music4,
   MountainIcon: Mountain,
   GridIcon: Grid3X3,

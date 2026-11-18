@@ -1,4 +1,6 @@
 import { useI18n } from "@/lib/i18n/I18nContext";
+import { fill } from "@/lib/i18n/format";
+import { YEARS_OF_EXPERIENCE } from "../experience/experienceData";
 import StatusBadge from "./StatusBadge";
 
 // Tiny gridded readout of the agent's core fields. On phones it spans the full
@@ -20,7 +22,7 @@ export default function DossierMeta({ className }) {
       {rows.map((row) => (
         <div key={row.label} className="grid grid-cols-[auto_1fr] gap-x-2">
           <span className="uppercase tracking-[0.1em] text-zinc-500">{row.label}:</span>
-          <span className="uppercase tracking-[0.1em] text-cyan-300/90">{row.value}</span>
+          <span className="uppercase tracking-[0.1em] text-cyan-300/90">{fill(row.value, { years: YEARS_OF_EXPERIENCE })}</span>
         </div>
       ))}
     </div>

@@ -1,7 +1,7 @@
 import { Box, Gamepad2, Network } from "lucide-react";
 
 // Lucide glyph matching each project's subject, shown in the card's visual area.
-const GLYPHS = {
+export const GLYPHS = {
   graph: Network,
   gamepad: Gamepad2,
   box: Box,

@@ -28,11 +28,11 @@ export const DICTS = {
           meta: [
             { label: "location", value: "medellín" },
             { label: "role", value: "full-stack" },
-            { label: "exp", value: "3 yrs" },
+            { label: "exp", value: "{years} yrs" },
           ],
           bio: [
             { text: "I build complete web products, from the database to the interface, with a strong frontend core. With " },
-            { text: "3+ years", hl: true },
+            { text: "{years}+ years", hl: true },
             { text: " of experience across " },
             { text: "Angular", hl: true },
             { text: ", " },
@@ -67,6 +67,8 @@ export const DICTS = {
       linked: "core linked",
     },
     lang: { label: "Language", switch: "Switch language" },
+    // Short month names and the open end of a job span (see lib/i18n/format.js).
+    dates: { months: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"], present: "Present" },
     errors: {
       notFoundTitle: "404 // node not found",
       notFound: "The page you are looking for does not exist.",
@@ -106,11 +108,11 @@ export const DICTS = {
           meta: [
             { label: "location", value: "medellín" },
             { label: "role", value: "full-stack" },
-            { label: "exp", value: "3 años" },
+            { label: "exp", value: "{years} años" },
           ],
           bio: [
             { text: "Construyo productos web completos, de la base de datos a la interfaz, con un núcleo fuerte en frontend. Con más de " },
-            { text: "3 años", hl: true },
+            { text: "{years} años", hl: true },
             { text: " de experiencia en " },
             { text: "Angular", hl: true },
             { text: ", " },
@@ -145,6 +147,8 @@ export const DICTS = {
       linked: "core enlazado",
     },
     lang: { label: "Idioma", switch: "Cambiar idioma" },
+    // Short month names and the open end of a job span (see lib/i18n/format.js).
+    dates: { months: ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"], present: "Actualidad" },
     errors: {
       notFoundTitle: "404 // nodo no encontrado",
       notFound: "La página que buscas no existe.",
@@ -184,11 +188,11 @@ export const DICTS = {
           meta: [
             { label: "location", value: "medellín" },
             { label: "role", value: "full-stack" },
-            { label: "exp", value: "3 jahre" },
+            { label: "exp", value: "{years} jahre" },
           ],
           bio: [
             { text: "Ich entwickle komplette Webprodukte, von der Datenbank bis zur Oberfläche, mit einem starken Frontend-Kern. Mit über " },
-            { text: "3 Jahren", hl: true },
+            { text: "{years} Jahren", hl: true },
             { text: " Erfahrung in " },
             { text: "Angular", hl: true },
             { text: ", " },
@@ -223,6 +227,8 @@ export const DICTS = {
       linked: "core verbunden",
     },
     lang: { label: "Sprache", switch: "Sprache wechseln" },
+    // Short month names and the open end of a job span (see lib/i18n/format.js).
+    dates: { months: ["Jan", "Feb", "Mär", "Apr", "Mai", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dez"], present: "Heute" },
     errors: {
       notFoundTitle: "404 // Knoten nicht gefunden",
       notFound: "Die gesuchte Seite existiert nicht.",
