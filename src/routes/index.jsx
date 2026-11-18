@@ -2,6 +2,7 @@ import { useCallback, useState } from "react";
 import { createFileRoute, getRouteApi } from "@tanstack/react-router";
 import BootTerminal from "@/components/boot/BootTerminal";
 import CoreCanvas from "@/components/core/CoreCanvas";
+import ProfileSummary from "@/components/seo/ProfileSummary";
 import { I18nProvider } from "@/lib/i18n/I18nContext";
 
 const rootRoute = getRouteApi("__root__");
@@ -19,6 +20,8 @@ function HomePage() {
     <main className="relative min-h-screen bg-zinc-950 font-mono text-zinc-200 antialiased">
       {/* One language provider for the whole experience: the boot sequence and the canvas share it. */}
       <I18nProvider initialLang={lang}>
+        {/* Text version of the profile for search engines and screen readers. */}
+        <ProfileSummary />
         <CoreCanvas revealed={booted} />
         {!booted && <BootTerminal onComplete={handleBootComplete} />}
       </I18nProvider>

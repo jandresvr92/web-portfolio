@@ -4,6 +4,7 @@ import { NotFound } from "@/components/NotFound";
 import { detectLang } from "@/lib/i18n/detectLang";
 import { DICTS, LANGUAGES } from "@/lib/i18n/dictionaries";
 import { OG_IMAGE, SITE_URL } from "@/lib/site";
+import { personJsonLd } from "@/lib/seo";
 import appCss from "@/index.css?url";
 
 export const Route = createRootRoute({
@@ -35,6 +36,8 @@ export const Route = createRootRoute({
         { name: "twitter:card", content: "summary_large_image" },
         { name: "twitter:image", content: `${SITE_URL}${OG_IMAGE.path}` },
         { name: "twitter:image:alt", content: meta.imageAlt },
+        // Structured data: who the site is about (schema.org Person).
+        { "script:ld+json": personJsonLd({ description: meta.description }) },
       ],
       links: [
         { rel: "canonical", href: `${SITE_URL}/` },

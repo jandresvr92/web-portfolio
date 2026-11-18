@@ -79,6 +79,8 @@ export const DICTS = {
     },
     meta: {
       title: "Jaime Vélez Rojas // Full-stack Developer",
+      // The professional title on its own: the hidden profile summary's <h1>.
+      role: "Full-stack Developer",
       description:
         "Portfolio of Jaime Andrés Vélez Rojas, full-stack developer with Angular, React, Node.js and PostgreSQL: web apps, data visualization and 3D experiences.",
       locale: "en_US",
@@ -159,6 +161,7 @@ export const DICTS = {
     },
     meta: {
       title: "Jaime Vélez Rojas // Desarrollador Full-stack",
+      role: "Desarrollador Full-stack",
       description:
         "Portafolio de Jaime Andrés Vélez Rojas, desarrollador full-stack con Angular, React, Node.js y PostgreSQL: aplicaciones web, visualización de datos y experiencias 3D.",
       locale: "es_CO",
@@ -239,6 +242,7 @@ export const DICTS = {
     },
     meta: {
       title: "Jaime Vélez Rojas // Full-Stack-Entwickler",
+      role: "Full-Stack-Entwickler",
       description:
         "Portfolio von Jaime Andrés Vélez Rojas, Full-Stack-Entwickler mit Angular, React, Node.js und PostgreSQL: Web-Apps, Datenvisualisierung und 3D-Erlebnisse.",
       locale: "de_DE",
